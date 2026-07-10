@@ -1,0 +1,19 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://horizons-coaching.com/</loc>
+  </url>
+  {%- for post in collections.blog %}
+  <url>
+    <loc>https://horizons-coaching.com{{ post.url }}</loc>
+    <lastmod>{{ post.date | dateISO }}</lastmod>
+  </url>
+  {%- endfor %}
+  <url>
+    <loc>https://horizons-coaching.com/blog/</loc>
+  </url>
+</urlset>
