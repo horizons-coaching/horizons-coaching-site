@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Horizons-Coaching — Maquette</title>
+<title>Horizons-Coaching — Conseil &amp; coaching de vie personnelle | Budapest &amp; en ligne</title>
+<meta name="description" content="Conseil et coaching de vie personnelle, en français et en anglais : vie amoureuse, parentalité, épreuves de vie, épanouissement, expatriation. En visioconférence partout dans le monde ou en présentiel à Budapest. Séance d'1h à 70 € / 25 000 HUF.">
+<meta property="og:title" content="Horizons-Coaching — Conseil &amp; coaching de vie personnelle">
+<meta property="og:description" content="Un accompagnement humain, individuel et sur-mesure. En visioconférence partout dans le monde ou en présentiel à Budapest.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://horizons-coaching.com/">
+<meta property="og:locale" content="fr_FR">
+<link rel="canonical" href="https://horizons-coaching.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -89,6 +96,22 @@
   .sub{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:8px 16px;font-size:.86rem;color:#3a4750}
   .sub b{color:var(--deep);font-weight:600}
   .sub .docs{color:var(--sand);font-size:.76rem;margin-left:6px}
+
+  /* 5 pavés colorés (page d'accueil) */
+  .paves{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .pave{border-radius:var(--radius);padding:22px 18px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
+  .pave:hover{transform:translateY(-4px)}
+  .pave h3{color:#fff;font-size:1.12rem;margin-bottom:12px;cursor:pointer;line-height:1.2}
+  .pave h3:hover{text-decoration:underline}
+  .pave a.pl{display:block;color:rgba(255,255,255,.94);font-size:.82rem;padding:7px 0;border-top:1px solid rgba(255,255,255,.24);cursor:pointer;transition:padding .15s}
+  .pave a.pl:hover{padding-left:5px;color:#fff}
+  .pave.c1{background:linear-gradient(160deg,#c9736f,#a04b48)}
+  .pave.c2{background:linear-gradient(160deg,#6fa07d,#4a7d59)}
+  .pave.c3{background:linear-gradient(160deg,#7b74a6,#565081)}
+  .pave.c4{background:linear-gradient(160deg,#c9a15e,#a67c3a)}
+  .pave.c5{background:linear-gradient(160deg,#3f93a6,#2c6f80)}
+  @media(max-width:900px){.paves{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.paves{grid-template-columns:1fr}}
 
   ul.check{list-style:none;margin:8px 0}
   ul.check li{padding-left:28px;position:relative;margin-bottom:10px;color:#41525b}
@@ -191,15 +214,19 @@
           <line x1="24" y1="116" x2="276" y2="116" stroke="url(#hhz)" stroke-width="2.2" stroke-linecap="round"/>
         </svg>
       </div>
-      <div class="eyebrow"><span class="lang-fr">Coaching de vie amoureuse, parentale &amp; d'expatriation</span><span class="lang-en">Love, parenting &amp; expatriation life-coaching</span></div>
+      <div class="eyebrow"><span class="lang-fr">Conseil &amp; coaching de vie personnelle</span><span class="lang-en">Personal life advice &amp; coaching</span></div>
       <h1>Horizons-Coaching</h1>
       <span class="dn">HORIZONS‑COACHING.COM</span>
       <p class="lead">
-        <span class="lang-fr">Un accompagnement humain, exigeant et personnalisé, pour éclairer vos relations, votre parentalité et vos transitions de vie — à Budapest et partout dans le monde, en ligne.</span>
-        <span class="lang-en">Human, demanding and personalised support to illuminate your relationships, parenting and life transitions — in Budapest and anywhere in the world, online.</span>
+        <span class="lang-fr">En visioconférence, partout à travers le monde — ou en présentiel à Budapest, Hongrie.</span>
+        <span class="lang-en">By video call, anywhere in the world — or in person in Budapest, Hungary.</span>
+      </p>
+      <p class="lead serif" style="font-size:1.55rem;color:var(--deep);font-weight:600;max-width:700px;margin-top:8px">
+        <span class="lang-fr">Avec Horizons-Coaching, surmontez vos difficultés et atteignez vos objectifs de vie personnelle !</span>
+        <span class="lang-en">With Horizons-Coaching, overcome your difficulties and reach your personal-life goals!</span>
       </p>
       <div class="cta-row">
-        <button class="btn" onclick="go('infos')"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a session</span></button>
+        <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous</span><span class="lang-en">Book a session</span></button>
         <button class="btn ghost" onclick="go('domaines')"><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></button>
       </div>
       <div class="loc">
@@ -209,19 +236,95 @@
     </div>
   </div>
 
+  <!-- Notre formule -->
   <section class="block">
     <div class="center">
       <div class="kicker"><span class="lang-fr">Notre singularité</span><span class="lang-en">What sets us apart</span></div>
-      <h2><span class="lang-fr">La différence par la qualité</span><span class="lang-en">Standing out through quality</span></h2>
-      <p><span class="lang-fr">Face aux milliers de sites de coaching apparus ces dernières années, nous faisons un choix différent : la profondeur plutôt que l'effet de mode. Pas de grandes photos ni de vidéos, mais un contenu rédigé avec soin, utile, et pensé pour être trouvé — y compris par les intelligences artificielles devenues le moyen de recherche privilégié du public.</span>
-      <span class="lang-en">Amid the thousands of coaching sites of recent years, we make a different choice: depth over trend. No oversized photos or videos, but carefully written, genuinely useful content — designed to be found, including by the AI tools that have become the public's preferred way to search.</span></p>
+      <h2><span class="lang-fr">Une formule unique</span><span class="lang-en">A unique formula</span></h2>
+      <p><span class="lang-fr">Notre formule est unique, par sa souplesse et sa volonté de répondre précisément à vos besoins :</span><span class="lang-en">Our formula is unique — flexible, and designed to answer your needs precisely:</span></p>
     </div>
-    <div class="grid g3">
-      <div class="card"><div class="ic">♥</div><h3><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3><p><span class="lang-fr">Du couple à la séparation, un accompagnement des relations affectives.</span><span class="lang-en">From couple life to separation, support for your emotional relationships.</span></p></div>
-      <div class="card"><div class="ic">☺</div><h3><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3><p><span class="lang-fr">Éducation, enfants HPI, protection de l'enfant : un soutien à la parentalité.</span><span class="lang-en">Education, gifted children, child protection: parenting support.</span></p></div>
-      <div class="card"><div class="ic">◍</div><h3><span class="lang-fr">Expatriation</span><span class="lang-en">Expatriation</span></h3><p><span class="lang-fr">Un accompagnement de vie dans le cadre d'une expatriation, où que vous soyez.</span><span class="lang-en">Life support in an expatriation context, wherever you are.</span></p></div>
+    <div class="wrap" style="max-width:760px">
+      <ul class="check">
+        <li><span class="lang-fr">Un accompagnement humain, individuel et sur-mesure.</span><span class="lang-en">Human, individual and tailor-made support.</span></li>
+        <li><span class="lang-fr">L'option entre des « conseils de vie personnelle » ou un « coaching de vie ».</span><span class="lang-en">The choice between “personal life advice” or “life coaching”.</span></li>
+        <li><span class="lang-fr">Le choix entre deux conseillères, de générations différentes.</span><span class="lang-en">The choice between two advisors, from different generations.</span></li>
+        <li><span class="lang-fr">Un nombre et un rythme de séances en fonction de vos souhaits et de votre disponibilité.</span><span class="lang-en">A number and pace of sessions to suit your wishes and availability.</span></li>
+        <li><span class="lang-fr">Une facturation non pas au forfait, mais uniquement au fur et à mesure des séances qui vous sont nécessaires.</span><span class="lang-en">Billing not by package, but only as and when you need each session.</span></li>
+      </ul>
     </div>
-    <div class="center" style="margin-top:38px"><button class="btn ghost" onclick="go('valeurs')"><span class="lang-fr">Découvrir nos valeurs</span><span class="lang-en">Discover our values</span></button></div>
+  </section>
+
+  <!-- Domaines : 5 pavés -->
+  <section class="block alt">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Notre expertise</span><span class="lang-en">Our expertise</span></div>
+      <h2><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></h2>
+      <p><span class="lang-fr">Cliquez sur un domaine ou une sous-catégorie pour en savoir plus.</span><span class="lang-en">Click a field or a sub-category to learn more.</span></p>
+    </div>
+    <div class="wrap">
+      <div class="paves">
+        <div class="pave c1">
+          <h3 onclick="go('domaines')"><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Divorce et séparation</span><span class="lang-en">Divorce and separation</span></a>
+        </div>
+        <div class="pave c2">
+          <h3 onclick="go('domaines')"><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></a>
+        </div>
+        <div class="pave c3">
+          <h3 onclick="go('domaines')"><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Manipulations et pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></a>
+        </div>
+        <div class="pave c4">
+          <h3 onclick="go('domaines')"><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults</span></a>
+        </div>
+        <div class="pave c5">
+          <h3 onclick="go('domaines')"><span class="lang-fr">Expatriation dans le monde</span><span class="lang-en">Expatriation worldwide</span></h3>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Projet et accompagnement</span><span class="lang-en">Project &amp; support</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></a>
+          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Choisir votre conseillère -->
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Nos deux conseillères</span><span class="lang-en">Our two advisors</span></div>
+      <h2><span class="lang-fr">Choisir votre conseillère</span><span class="lang-en">Choose your advisor</span></h2>
+      <p><span class="lang-fr">Isabelle et Pearl, nos deux conseillères et coachs de vie personnelle, sont toutes deux françaises. Mère et fille, elles partagent une même vocation d'accompagnement, dans le respect des compétences propres à chacune.</span><span class="lang-en">Isabelle and Pearl, our two personal-life advisors and coaches, are both French. Mother and daughter, they share the same vocation for support, each with her own distinct strengths.</span></p>
+    </div>
+    <div class="wrap persons">
+      <div class="person"><div class="avatar">I</div><h3>Isabelle</h3><p><span class="lang-fr">Forte d'une longue expérience d'avocate en droit des personnes et de la famille, et en protection de l'enfance, elle accompagne les personnes qui traversent des épreuves de vie ainsi que tout ce qui touche à la parentalité.</span><span class="lang-en">With long experience as a lawyer in family law and child protection, she supports people going through life ordeals as well as everything related to parenting.</span></p></div>
+      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p><span class="lang-fr">De la génération des jeunes adultes, elle comprend de l'intérieur les difficultés auxquelles ils font face. Son accompagnement est particulièrement adapté à la vie amoureuse et au désir d'épanouissement personnel.</span><span class="lang-en">From the young-adult generation, she understands their challenges first-hand. Her support is especially suited to love life and the desire for personal fulfilment.</span></p></div>
+    </div>
+    <div class="center" style="margin-top:24px">
+      <p><span class="lang-fr">En matière d'expatriation, Isabelle et Pearl ont toutes deux plusieurs expériences et sont à même de vous aider. <b>À vous de choisir !</b></span><span class="lang-en">On expatriation, both Isabelle and Pearl have several personal experiences and can help you. <b>The choice is yours!</b></span></p>
+      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous !</span><span class="lang-en">Book a session!</span></button>
+    </div>
+  </section>
+
+  <!-- Séances & tarif -->
+  <section class="block alt">
+    <div class="center" style="max-width:640px">
+      <div class="kicker"><span class="lang-fr">Nos séances &amp; notre tarif</span><span class="lang-en">Our sessions &amp; fee</span></div>
+      <h2><span class="lang-fr">Simple et transparent</span><span class="lang-en">Simple and transparent</span></h2>
+      <p><span class="lang-fr">Nos séances durent 1 heure. Notre tarif unique, pour un conseil ou un coaching, est de :</span><span class="lang-en">Our sessions last 1 hour. Our single fee, for advice or coaching, is:</span></p>
+      <div class="serif" style="font-size:2.7rem;color:var(--deep);font-weight:700;margin:8px 0">70 € <span style="font-size:1.4rem;color:var(--sand)">/ 25 000 HUF</span></div>
+      <p><span class="lang-fr">Alors n'hésitez pas !</span><span class="lang-en">So don't hesitate!</span></p>
+      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous !</span><span class="lang-en">Book with us!</span></button>
+    </div>
   </section>
 
   <div class="cta-band">
@@ -291,7 +394,7 @@
         <div class="thead"><div class="badge">4</div><h3><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3></div>
         <div class="subs">
           <span class="sub"><b><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
-          <span class="sub"><b><span class="lang-fr">Évolution de vie</span><span class="lang-en">Life evolution</span></b><span class="docs"><span class="lang-fr">3 articles</span><span class="lang-en">3 articles</span></span></span>
+          <span class="sub"><b><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></b></span>
           <span class="sub"><b><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults (HPI)</span></b></span>
         </div>
       </div>
@@ -351,12 +454,10 @@
     </div>
     <div class="wrap" style="max-width:760px">
       <h4 style="margin-bottom:14px"><span class="lang-fr">Informations et tarif</span><span class="lang-en">Information &amp; fees</span></h4>
-      <span class="note"><span class="lang-fr">Tarifs d'exemple — à définir</span><span class="lang-en">Sample fees — to be defined</span></span>
+      <p><span class="lang-fr">Une facturation à la séance, sans forfait : vous ne réglez que les séances qui vous sont nécessaires.</span><span class="lang-en">Billing per session, no package: you only pay for the sessions you actually need.</span></p>
       <table class="tarifs" style="margin-bottom:36px">
         <tr><th><span class="lang-fr">Formule</span><span class="lang-en">Option</span></th><th><span class="lang-fr">Durée</span><span class="lang-en">Duration</span></th><th><span class="lang-fr">Tarif</span><span class="lang-en">Fee</span></th></tr>
-        <tr><td><span class="lang-fr">Premier échange</span><span class="lang-en">First conversation</span></td><td>30 min</td><td>—</td></tr>
-        <tr><td><span class="lang-fr">Séance individuelle</span><span class="lang-en">Individual session</span></td><td>60 min</td><td>—</td></tr>
-        <tr><td><span class="lang-fr">Accompagnement (5 séances)</span><span class="lang-en">Programme (5 sessions)</span></td><td>5 × 60 min</td><td>—</td></tr>
+        <tr><td><span class="lang-fr">Conseil ou coaching de vie personnelle</span><span class="lang-en">Personal-life advice or coaching</span></td><td><span class="lang-fr">1 heure</span><span class="lang-en">1 hour</span></td><td>70 € / 25 000 HUF</td></tr>
       </table>
 
       <h4 style="margin-bottom:14px"><span class="lang-fr">Formulaire de prise de rendez-vous</span><span class="lang-en">Booking form</span></h4>
@@ -412,7 +513,7 @@
         <a>📍 Budapest, Hongrie</a>
       </div>
     </div>
-    <div class="foot-bottom"><span class="lang-fr">Maquette de démonstration — Horizons‑Coaching.com · Contenus provisoires</span><span class="lang-en">Demo mockup — Horizons‑Coaching.com · Placeholder content</span></div>
+    <div class="foot-bottom"><span class="lang-fr">© Horizons‑Coaching.com · Conseil &amp; coaching de vie personnelle · Budapest &amp; en ligne</span><span class="lang-en">© Horizons‑Coaching.com · Personal life advice &amp; coaching · Budapest &amp; online</span></div>
   </div>
 </footer>
 
@@ -432,4 +533,4 @@
   }
 </script>
 </body>
-</html>
+  </html>
