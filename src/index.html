@@ -479,11 +479,11 @@
       </table>
 
       <h4 style="margin-bottom:14px"><span class="lang-fr">Formulaire de prise de rendez-vous</span><span class="lang-en">Booking form</span></h4>
-      <div class="booking">
-        <div class="big"><span class="lang-fr">📅 Emplacement du calendrier de réservation</span><span class="lang-en">📅 Booking calendar area</span></div>
-        <p><span class="lang-fr">Ici s'encastrera le module <b>Minup</b> : choix de la personne (Pearl / Isabelle), du format (visio ou présentiel à Budapest) et du créneau, <b>paiement en ligne</b> et <b>facture NAV automatique</b>. Le lien de visioconférence est envoyé dans l'e-mail de confirmation.</span>
-        <span class="lang-en">The <b>Minup</b> module will be embedded here: choice of person (Pearl / Isabelle), format (video or in person in Budapest) and time slot, <b>online payment</b> and <b>automatic NAV invoice</b>. The video link is sent in the confirmation e-mail.</span></p>
+      <div class="bookwrap">
+        <iframe src="https://app.minup.io/embed/horizons-coaching/services?canStartPayment=true" title="Réservation en ligne — Horizons-Coaching" style="width:100%;height:640px;max-width:100%;border:1px solid var(--line);border-radius:14px;background:#fff" loading="lazy"></iframe>
+        <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px"><span class="lang-fr">Réservation en ligne sécurisée via <b>Minup</b>. Le paiement en ligne et la facture automatique seront activés dès la création de la société.</span><span class="lang-en">Secure online booking via <b>Minup</b>. Online payment and automatic invoicing will be enabled once the company is set up.</span></p>
       </div>
+      <script>window.addEventListener("message",function(e){if(e.origin!=="https://app.minup.io")return;var d=e.data;if(d&&d.type==="redirect_to_payment"){window.location.href=d.url;}});</script>
       <div class="grid g2" style="margin-top:22px">
         <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Nous écrire</span><span class="lang-en">Contact us</span></h3><p><span class="lang-fr">Une question avant de réserver ?</span><span class="lang-en">A question before booking?</span><br><br>✉️ contact@horizons-coaching.com<br>📱 +36 30 083 3210</p></div>
         <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Où ?</span><span class="lang-en">Where?</span></h3><p><span class="lang-fr">En ligne partout dans le monde, ou à Budapest sur rendez-vous.</span><span class="lang-en">Online worldwide, or in Budapest by appointment.</span></p></div>
