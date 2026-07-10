@@ -156,6 +156,17 @@
   footer a:hover{color:#fff}
   .foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;text-align:center;color:#8fa5ab;font-size:.78rem}
 
+  .legnav{display:flex;gap:8px;justify-content:center;margin:-8px 0 26px;flex-wrap:wrap}
+  .legnav button{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:20px;padding:6px 16px;font-size:.8rem;font-weight:600;cursor:pointer}
+  .legnav button.on{background:var(--deep);color:#fff;border-color:var(--deep)}
+  .leg{display:none}
+  .leg.on{display:block}
+  .leg h3{font-size:1.15rem;margin-top:22px;margin-bottom:.2em}
+  .leg p{font-size:.92rem}
+  .leg a{word-break:break-word}
+  .leg .maj{background:var(--sand-soft);border-left:3px solid var(--sand);padding:8px 14px;font-size:.82rem;color:#8a6b47;border-radius:8px}
+  .leg em{color:var(--teal);font-style:normal;font-weight:600}
+
   @media(max-width:960px){
     nav.main{position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:12px;gap:2px;border-bottom:1px solid var(--line);display:none;box-shadow:var(--shadow)}
     nav.main.open{display:flex}
@@ -498,6 +509,148 @@
   </section>
 </div>
 
+<!-- MENTIONS LEGALES -->
+<div class="page" id="mentions">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Informations légales</span><span class="lang-en">Legal information</span></div>
+      <h2><span class="lang-fr">Mentions légales</span><span class="lang-en">Legal notice</span></h2>
+    </div>
+    <div class="wrap" style="max-width:860px">
+      <div class="legnav">
+        <button data-l="hu" onclick="legLang('mentions','hu')">Magyar</button>
+        <button data-l="fr" class="on" onclick="legLang('mentions','fr')">Français</button>
+        <button data-l="en" onclick="legLang('mentions','en')">English</button>
+      </div>
+
+      <div class="leg on" data-l="fr">
+        <p class="maj">⚠️ Modèle à compléter avec les informations de la société hongroise une fois celle-ci immatriculée.</p>
+        <h3>Éditeur du site</h3>
+        <p>Horizons-Coaching — <em>[dénomination sociale à compléter]</em>, exploité par Isabelle Beck et Pearl. Adresse : <em>[adresse à Budapest à compléter]</em>. E-mail : contact@horizons-coaching.com. Numéro d'enregistrement (Cégjegyzékszám) : <em>[à compléter]</em>. Numéro fiscal (Adószám) : <em>[à compléter]</em>.</p>
+        <h3>Responsable de la publication</h3>
+        <p>Isabelle Beck.</p>
+        <h3>Hébergement</h3>
+        <p>Site hébergé via Cloudflare Pages — Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis (cloudflare.com).</p>
+        <h3>Nom de domaine</h3>
+        <p>horizons-coaching.com, enregistré via DotRoll Kft. (Budapest).</p>
+        <h3>Propriété intellectuelle</h3>
+        <p>L'ensemble des contenus de ce site (textes, logo, visuels) est la propriété de Horizons-Coaching. Toute reproduction, même partielle, est interdite sans autorisation préalable. La version hongroise de ces mentions fait foi.</p>
+      </div>
+
+      <div class="leg" data-l="en">
+        <p class="maj">⚠️ Template to be completed with the Hungarian company's details once it is registered.</p>
+        <h3>Website publisher</h3>
+        <p>Horizons-Coaching — <em>[company name to be completed]</em>, operated by Isabelle Beck and Pearl. Address: <em>[Budapest address to be completed]</em>. E-mail: contact@horizons-coaching.com. Company registration number (Cégjegyzékszám): <em>[to be completed]</em>. Tax number (Adószám): <em>[to be completed]</em>.</p>
+        <h3>Publication manager</h3>
+        <p>Isabelle Beck.</p>
+        <h3>Hosting</h3>
+        <p>Site hosted via Cloudflare Pages — Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, USA (cloudflare.com).</p>
+        <h3>Domain name</h3>
+        <p>horizons-coaching.com, registered through DotRoll Kft. (Budapest).</p>
+        <h3>Intellectual property</h3>
+        <p>All content on this site (texts, logo, visuals) is the property of Horizons-Coaching. Any reproduction, even partial, is prohibited without prior authorisation. The Hungarian version of this notice prevails.</p>
+      </div>
+
+      <div class="leg" data-l="hu">
+        <p class="maj">⚠️ Minta – kiegészítendő a magyar társaság adataival, annak bejegyzését követően.</p>
+        <h3>A honlap üzemeltetője</h3>
+        <p>Horizons-Coaching — <em>[cégnév megadandó]</em>, üzemeltetők: Isabelle Beck és Pearl. Cím: <em>[budapesti cím megadandó]</em>. E-mail: contact@horizons-coaching.com. Cégjegyzékszám: <em>[megadandó]</em>. Adószám: <em>[megadandó]</em>.</p>
+        <h3>A tartalomért felelős személy</h3>
+        <p>Isabelle Beck.</p>
+        <h3>Tárhelyszolgáltató</h3>
+        <p>A honlapot a Cloudflare Pages szolgáltatja — Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, Egyesült Államok (cloudflare.com).</p>
+        <h3>Domain név</h3>
+        <p>horizons-coaching.com, a DotRoll Kft.-n keresztül regisztrálva (Budapest).</p>
+        <h3>Szellemi tulajdon</h3>
+        <p>A honlap teljes tartalma (szövegek, logó, képek) a Horizons-Coaching tulajdonát képezi. Bármilyen – akár részleges – többszörözés előzetes engedély nélkül tilos. Jelen nyilatkozat magyar nyelvű változata az irányadó.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- POLITIQUE DE CONFIDENTIALITE -->
+<div class="page" id="confidentialite">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">RGPD</span><span class="lang-en">GDPR</span></div>
+      <h2><span class="lang-fr">Politique de confidentialité</span><span class="lang-en">Privacy policy</span></h2>
+    </div>
+    <div class="wrap" style="max-width:860px">
+      <div class="legnav">
+        <button data-l="hu" onclick="legLang('confidentialite','hu')">Magyar</button>
+        <button data-l="fr" class="on" onclick="legLang('confidentialite','fr')">Français</button>
+        <button data-l="en" onclick="legLang('confidentialite','en')">English</button>
+      </div>
+
+      <div class="leg on" data-l="fr">
+        <p class="maj">⚠️ Modèle RGPD à compléter avec le nom de la société une fois immatriculée. La version hongroise fait foi.</p>
+        <h3>Responsable du traitement</h3>
+        <p>Horizons-Coaching — <em>[société à compléter]</em>, contact@horizons-coaching.com.</p>
+        <h3>Données que nous collectons</h3>
+        <p>• Si vous nous écrivez : votre nom, votre adresse e-mail et le contenu de votre message.<br>
+        • Lors d'une prise de rendez-vous (via Minup, à venir) : nom, e-mail, téléphone, créneau choisi et, le cas échéant, une brève description de votre demande.<br>
+        • En cas de paiement en ligne (à venir) : le paiement est traité par le prestataire Barion ; nous ne conservons pas vos données bancaires.</p>
+        <h3>Finalités</h3>
+        <p>Répondre à vos demandes, organiser et assurer le suivi des rendez-vous, établir les factures obligatoires.</p>
+        <h3>Base légale</h3>
+        <p>Votre consentement, l'exécution de mesures précontractuelles ou contractuelles, et nos obligations légales (facturation).</p>
+        <h3>Destinataires / sous-traitants</h3>
+        <p>Minup (réservation), Barion (paiement), Számlázz.hu ou Billingo (facturation), Cloudflare (hébergement). Le site charge par ailleurs des polices depuis Google Fonts, ce qui peut transmettre votre adresse IP à Google.</p>
+        <h3>Durée de conservation</h3>
+        <p>Le temps nécessaire au traitement de votre demande ; les factures sont conservées conformément à la loi hongroise (8 ans).</p>
+        <h3>Vos droits</h3>
+        <p>Accès, rectification, effacement, limitation, opposition et portabilité. Écrivez à contact@horizons-coaching.com. Vous pouvez aussi saisir l'autorité hongroise de protection des données (NAIH — naih.hu).</p>
+        <h3>Cookies</h3>
+        <p>Ce site n'utilise pas de cookies de mesure d'audience ni de traceurs publicitaires.</p>
+      </div>
+
+      <div class="leg" data-l="en">
+        <p class="maj">⚠️ GDPR template to be completed with the company name once registered. The Hungarian version prevails.</p>
+        <h3>Data controller</h3>
+        <p>Horizons-Coaching — <em>[company to be completed]</em>, contact@horizons-coaching.com.</p>
+        <h3>Data we collect</h3>
+        <p>• If you write to us: your name, e-mail address and the content of your message.<br>
+        • When booking an appointment (via Minup, coming soon): name, e-mail, phone, chosen slot and, where applicable, a short description of your request.<br>
+        • For online payment (coming soon): payment is handled by the provider Barion; we do not store your bank-card data.</p>
+        <h3>Purposes</h3>
+        <p>Answering your requests, organising and following up on appointments, issuing the required invoices.</p>
+        <h3>Legal basis</h3>
+        <p>Your consent, the performance of pre-contractual or contractual measures, and our legal obligations (invoicing).</p>
+        <h3>Recipients / processors</h3>
+        <p>Minup (booking), Barion (payment), Számlázz.hu or Billingo (invoicing), Cloudflare (hosting). The site also loads fonts from Google Fonts, which may transmit your IP address to Google.</p>
+        <h3>Retention period</h3>
+        <p>As long as needed to handle your request; invoices are kept in accordance with Hungarian law (8 years).</p>
+        <h3>Your rights</h3>
+        <p>Access, rectification, erasure, restriction, objection and portability. Write to contact@horizons-coaching.com. You may also lodge a complaint with the Hungarian data protection authority (NAIH — naih.hu).</p>
+        <h3>Cookies</h3>
+        <p>This site does not use analytics cookies or advertising trackers.</p>
+      </div>
+
+      <div class="leg" data-l="hu">
+        <p class="maj">⚠️ GDPR-minta – kiegészítendő a cég nevével a bejegyzést követően. A magyar változat az irányadó.</p>
+        <h3>Adatkezelő</h3>
+        <p>Horizons-Coaching — <em>[cég megadandó]</em>, contact@horizons-coaching.com.</p>
+        <h3>Milyen adatokat kezelünk</h3>
+        <p>• Ha ír nekünk: név, e-mail cím és az üzenet tartalma.<br>
+        • Időpontfoglaláskor (Minup, hamarosan): név, e-mail, telefonszám, választott időpont és adott esetben a kérés rövid leírása.<br>
+        • Online fizetés esetén (hamarosan): a fizetést a Barion szolgáltató kezeli; bankkártyaadatokat nem tárolunk.</p>
+        <h3>Az adatkezelés céljai</h3>
+        <p>Megkeresések megválaszolása, időpontok szervezése és lebonyolítása, a kötelező számlák kiállítása.</p>
+        <h3>Jogalap</h3>
+        <p>Az Ön hozzájárulása, szerződéskötést megelőző vagy szerződéses lépések, valamint jogi kötelezettségeink (számlázás).</p>
+        <h3>Címzettek / adatfeldolgozók</h3>
+        <p>Minup (foglalás), Barion (fizetés), Számlázz.hu vagy Billingo (számlázás), Cloudflare (tárhely). A honlap emellett a Google Fonts szolgáltatásból tölt be betűtípusokat, ami továbbíthatja az Ön IP-címét a Google felé.</p>
+        <h3>Megőrzési idő</h3>
+        <p>A megkeresés kezeléséhez szükséges ideig; a számlákat a magyar jogszabályoknak megfelelően 8 évig őrizzük.</p>
+        <h3>Az Ön jogai</h3>
+        <p>Hozzáférés, helyesbítés, törlés, korlátozás, tiltakozás és adathordozhatóság. Írjon a contact@horizons-coaching.com címre. Panasszal a Nemzeti Adatvédelmi és Információszabadság Hatósághoz (NAIH — naih.hu) is fordulhat.</p>
+        <h3>Sütik (cookie-k)</h3>
+        <p>A honlap jelenleg nem használ analitikai vagy hirdetési sütiket.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
 <footer>
   <div class="wrap">
     <div class="fgrid">
@@ -520,7 +673,12 @@
         <a>📍 Budapest, Hongrie</a>
       </div>
     </div>
-    <div class="foot-bottom"><span class="lang-fr">© Horizons‑Coaching.com · Conseil &amp; coaching de vie personnelle · Budapest &amp; en ligne</span><span class="lang-en">© Horizons‑Coaching.com · Personal life advice &amp; coaching · Budapest &amp; online</span></div>
+    <div class="foot-bottom">
+      <div style="margin-bottom:10px">
+        <a onclick="go('mentions')" style="display:inline;color:#c9d6da"><span class="lang-fr">Mentions légales</span><span class="lang-en">Legal notice</span></a> &nbsp;·&nbsp; <a onclick="go('confidentialite')" style="display:inline;color:#c9d6da"><span class="lang-fr">Politique de confidentialité</span><span class="lang-en">Privacy policy</span></a>
+      </div>
+      <span class="lang-fr">© Horizons‑Coaching.com · Conseil &amp; coaching de vie personnelle · Budapest &amp; en ligne</span><span class="lang-en">© Horizons‑Coaching.com · Personal life advice &amp; coaching · Budapest &amp; online</span>
+    </div>
   </div>
 </footer>
 
@@ -531,6 +689,10 @@
     document.querySelectorAll('nav.main a').forEach(a=>a.classList.toggle('active',a.dataset.p===id));
     document.getElementById('nav').classList.remove('open');
     window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function legLang(page,l){
+    document.querySelectorAll('#'+page+' .leg').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+    document.querySelectorAll('#'+page+' .legnav button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
   }
   function setLang(l){
     document.body.classList.toggle('en',l==='en');
