@@ -67,7 +67,7 @@
   .hero .horizon{position:absolute;left:0;right:0;bottom:130px;height:1px;background:linear-gradient(90deg,transparent,rgba(44,122,140,.4),transparent)}
   .hero .sun{position:absolute;left:50%;bottom:130px;transform:translate(-50%,50%);width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(201,143,94,.22),rgba(201,143,94,0) 70%)}
   .hero .eyebrow{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:16px}
-  .hero .dn{display:inline-block;margin-top:6px;font-size:.95rem;letter-spacing:2px;color:var(--teal);font-weight:600;border:1px solid var(--teal-soft);background:#fff;padding:5px 16px;border-radius:20px}
+  .hero .dn{display:inline-block;margin-top:14px;font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:2px;color:var(--deep);font-weight:700;font-family:'Cormorant Garamond',Georgia,serif;border:1px solid var(--teal-soft);background:#fff;padding:8px 22px;border-radius:24px}
   .hero p.lead{font-size:1.15rem;max-width:640px;margin:20px auto 30px;color:#41525b}
   .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .loc{margin-top:26px;font-size:.8rem;color:var(--muted);letter-spacing:.5px}
@@ -111,7 +111,16 @@
   .pave.c4{background:linear-gradient(160deg,#c9a15e,#a67c3a)}
   .pave.c5{background:linear-gradient(160deg,#3f93a6,#2c6f80)}
   @media(max-width:900px){.paves{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.paves{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .paves{grid-template-columns:1fr}
+    table.tarifs tr:first-child{display:none}
+    table.tarifs,table.tarifs tbody,table.tarifs tr,table.tarifs td{display:block;width:100%}
+    table.tarifs td{border-bottom:none;text-align:center;padding:2px 20px}
+    table.tarifs tr{border-bottom:1px solid var(--line);padding:10px 0}
+    table.tarifs td:first-child{padding-top:14px;font-size:1.05rem;font-weight:600;color:var(--deep)}
+    table.tarifs td:nth-child(2){color:var(--muted);font-size:.86rem}
+    table.tarifs td:last-child{padding-bottom:14px;font-size:1.4rem;font-weight:700;color:var(--deep)}
+  }
 
   ul.check{list-style:none;margin:8px 0}
   ul.check li{padding-left:28px;position:relative;margin-bottom:10px;color:#41525b}
@@ -173,7 +182,6 @@
           <line x1="20" y1="13" x2="26" y2="13" stroke-width="2.2"/><line x1="38" y1="13" x2="44" y2="13" stroke-width="2.2"/>
         </g>
       </svg>
-      Horizons<b>-</b>Coaching
     </div>
     <nav class="main" id="nav">
       <a onclick="go('valeurs')" data-p="valeurs"><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></a>
@@ -215,7 +223,6 @@
         </svg>
       </div>
       <div class="eyebrow"><span class="lang-fr">Conseil &amp; coaching de vie personnelle</span><span class="lang-en">Personal life advice &amp; coaching</span></div>
-      <h1>Horizons-Coaching</h1>
       <span class="dn">HORIZONS‑COACHING.COM</span>
       <p class="lead">
         <span class="lang-fr">En visioconférence, partout à travers le monde — ou en présentiel à Budapest, Hongrie.</span>
