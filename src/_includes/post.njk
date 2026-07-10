@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<article>
+  <h1>{{ title }}</h1>
+  <div class="meta">{{ date | dateFR }}{% if lang == "en" %} · EN{% endif %}</div>
+  {% if image %}<img src="{{ image }}" alt="">{% endif %}
+  {{ content | safe }}
+  <a class="backlink" href="/blog/">← Tous les articles</a>
+</article>

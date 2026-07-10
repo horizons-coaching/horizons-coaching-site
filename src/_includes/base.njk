@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "Blog" }} — Horizons-Coaching</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#22303a;--deep:#0f3b47;--teal:#2c7a8c;--sand:#c98f5e;--cream:#f8f5f0;--white:#fff;--line:#e7ded1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);line-height:1.75}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;color:var(--deep);line-height:1.15}
+  a{color:var(--teal);text-decoration:none}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid var(--line);background:var(--white)}
+  header .wrap{max-width:1000px;display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:var(--deep)}
+  .brand b{color:var(--sand)}
+  nav a{margin-left:18px;font-size:.9rem;color:var(--ink)}
+  main{padding:56px 0}
+  footer{background:var(--deep);color:#c9d6da;padding:34px 0;font-size:.85rem;text-align:center;margin-top:60px}
+  article h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:8px}
+  .meta{color:var(--sand);font-size:.8rem;letter-spacing:1px;text-transform:uppercase;font-weight:600;margin-bottom:26px}
+  article p{margin-bottom:1.1rem}article h2{font-size:1.6rem;margin:1.4rem 0 .5rem}
+  article img{max-width:100%;border-radius:12px;margin:1rem 0}
+  .backlink{display:inline-block;margin-top:36px;font-weight:600}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="/" class="brand">Horizons<b>-</b>Coaching</a>
+  <nav><a href="/">Accueil</a><a href="/blog/">Blog</a></nav>
+</div></header>
+<main><div class="wrap">
+{{ content | safe }}
+</div></main>
+<footer>Horizons-Coaching · Budapest · <a href="/" style="color:#fff">horizons-coaching.com</a></footer>
+</body>
+</html>

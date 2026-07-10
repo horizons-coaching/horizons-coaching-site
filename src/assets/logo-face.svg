@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 175" width="300" height="175">
+  <rect width="300" height="175" fill="#f8f5f0"/>
+  <defs>
+    <radialGradient id="s2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eabe8f"/><stop offset="55%" stop-color="#d8a46c" stop-opacity=".5"/><stop offset="100%" stop-color="#d8a46c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="h2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f3b47" stop-opacity="0"/><stop offset="20%" stop-color="#0f3b47"/><stop offset="80%" stop-color="#0f3b47"/><stop offset="100%" stop-color="#0f3b47" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sun -->
+  <circle cx="150" cy="52" r="34" fill="url(#s2)"/>
+
+  <g fill="none" stroke="#0f3b47" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- suspension chains sweeping from tower top to the sides -->
+    <path d="M116,58 C92,64 58,100 26,120"/>
+    <path d="M184,58 C208,64 242,100 274,120"/>
+    <!-- hangers on chains -->
+    <g stroke-width="1.1" opacity=".75">
+      <line x1="52" y1="108" x2="52" y2="120"/><line x1="74" y1="92" x2="74" y2="120"/><line x1="96" y1="78" x2="96" y2="120"/>
+      <line x1="248" y1="108" x2="248" y2="120"/><line x1="226" y1="92" x2="226" y2="120"/><line x1="204" y1="78" x2="204" y2="120"/>
+    </g>
+
+    <!-- TOWER (front) -->
+    <!-- cornice cap -->
+    <path d="M112,54 L188,54"/>
+    <path d="M116,54 L116,48 L184,48 L184,54" stroke-width="2"/>
+    <path d="M132,48 L132,43 L168,43 L168,48" stroke-width="1.8"/>
+    <!-- tower side walls -->
+    <path d="M116,54 L116,120"/>
+    <path d="M184,54 L184,120"/>
+    <!-- central pier -->
+    <path d="M145,120 L145,60 M155,120 L155,60"/>
+    <!-- left arch -->
+    <path d="M124,120 L124,88 A9,9 0 0 1 142,88 L142,120"/>
+    <!-- right arch -->
+    <path d="M158,120 L158,88 A9,9 0 0 1 176,88 L176,120"/>
+  </g>
+
+  <!-- deck -->
+  <line x1="24" y1="120" x2="276" y2="120" stroke="#0f3b47" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- horizon / water -->
+  <line x1="20" y1="134" x2="280" y2="134" stroke="url(#h2)" stroke-width="2.2" stroke-linecap="round"/>
+  <g stroke="#2c7a8c" stroke-width="1.4" opacity=".3" stroke-linecap="round"><line x1="120" y1="142" x2="120" y2="147"/><line x1="150" y1="143" x2="150" y2="149"/><line x1="180" y1="142" x2="180" y2="147"/></g>
+</svg>

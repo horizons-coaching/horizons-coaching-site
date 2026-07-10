@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizons-Coaching — Maquette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#22303a; --muted:#5c6b74; --deep:#0f3b47; --teal:#2c7a8c;
+    --teal-soft:#e7f0f2; --sand:#c98f5e; --sand-soft:#f3e7d8;
+    --cream:#f8f5f0; --white:#fff; --line:#e7ded1;
+    --shadow:0 10px 40px rgba(15,59,71,.08); --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;color:var(--deep)}
+  h1{font-size:clamp(2.4rem,5.5vw,4rem);letter-spacing:.5px}
+  h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:.5em}
+  h3{font-size:1.4rem;margin-bottom:.35em}
+  h4{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--teal);margin-bottom:.3em}
+  p{margin-bottom:1rem;color:#3a4750}
+  a{color:var(--teal);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .lang-en{display:none}
+  body.en .lang-fr{display:none}
+  body.en .lang-en{display:inline}
+  body.en h1 .lang-en,body.en h2 .lang-en,body.en h3 .lang-en,body.en h4 .lang-en{display:inline}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(248,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:10px}
+  .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:var(--deep);letter-spacing:.5px;display:flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap}
+  .brand .mark{width:42px;height:28px;flex:none}
+  .herologo{margin:0 auto 4px}
+  .herologo svg{width:clamp(150px,26vw,190px);height:auto}
+  .brand b{color:var(--sand)}
+  nav.main{display:flex;gap:2px;align-items:center;flex-wrap:wrap}
+  nav.main a{color:var(--ink);font-size:.78rem;font-weight:500;padding:8px 10px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  nav.main a:hover{background:var(--teal-soft);color:var(--deep)}
+  nav.main a.active{color:var(--teal)}
+  .tools{display:flex;align-items:center;gap:10px}
+  .langtoggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;font-size:.7rem;font-weight:600}
+  .langtoggle button{border:none;background:transparent;padding:6px 10px;cursor:pointer;color:var(--muted)}
+  .langtoggle button.on{background:var(--deep);color:#fff}
+  .btn{display:inline-block;background:var(--sand);color:#fff;padding:11px 22px;border-radius:30px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 18px rgba(201,143,94,.35)}
+  .btn:hover{transform:translateY(-2px);color:#fff}
+  .btn.ghost{background:transparent;color:var(--deep);border:1.5px solid var(--deep);box-shadow:none}
+  .btn.ghost:hover{background:var(--deep);color:#fff}
+  .btn.small{padding:9px 16px;font-size:.78rem}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--deep)}
+
+  .page{display:none;animation:fade .4s ease}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .hero{position:relative;padding:80px 0 88px;text-align:center;overflow:hidden;background:linear-gradient(180deg,#f8f5f0 0%,#eef4f4 55%,#e3eef0 100%)}
+  .hero .horizon{position:absolute;left:0;right:0;bottom:130px;height:1px;background:linear-gradient(90deg,transparent,rgba(44,122,140,.4),transparent)}
+  .hero .sun{position:absolute;left:50%;bottom:130px;transform:translate(-50%,50%);width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(201,143,94,.22),rgba(201,143,94,0) 70%)}
+  .hero .eyebrow{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:16px}
+  .hero .dn{display:inline-block;margin-top:6px;font-size:.95rem;letter-spacing:2px;color:var(--teal);font-weight:600;border:1px solid var(--teal-soft);background:#fff;padding:5px 16px;border-radius:20px}
+  .hero p.lead{font-size:1.15rem;max-width:640px;margin:20px auto 30px;color:#41525b}
+  .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .loc{margin-top:26px;font-size:.8rem;color:var(--muted);letter-spacing:.5px}
+  .loc b{color:var(--teal)}
+
+  section.block{padding:66px 0}
+  section.block.alt{background:var(--white)}
+  .center{text-align:center;max-width:720px;margin:0 auto 44px}
+  .kicker{font-size:.76rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:12px}
+  .note{background:var(--sand-soft);border-left:3px solid var(--sand);border-radius:8px;padding:6px 14px;font-size:.76rem;color:#8a6b47;display:inline-block;margin-bottom:18px;font-weight:500}
+
+  .grid{display:grid;gap:22px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s}
+  section.block.alt .card{background:var(--cream)}
+  .card:hover{transform:translateY(-4px)}
+  .card p{font-size:.94rem;margin-bottom:0}
+  .ic{width:44px;height:44px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--teal);font-size:1.2rem}
+
+  /* Domaines */
+  .theme{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);margin-bottom:22px}
+  .theme .thead{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .theme .badge{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--deep));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.3rem;flex:none}
+  .subs{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .sub{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:8px 16px;font-size:.86rem;color:#3a4750}
+  .sub b{color:var(--deep);font-weight:600}
+  .sub .docs{color:var(--sand);font-size:.76rem;margin-left:6px}
+
+  ul.check{list-style:none;margin:8px 0}
+  ul.check li{padding-left:28px;position:relative;margin-bottom:10px;color:#41525b}
+  ul.check li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:50%;background:var(--sand-soft);border:2px solid var(--sand)}
+
+  .persons{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .person{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+  .avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--deep));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:14px}
+
+  table.tarifs{width:100%;border-collapse:collapse;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  table.tarifs td,table.tarifs th{padding:15px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:.94rem}
+  table.tarifs th{background:var(--deep);color:#fff;font-weight:600;font-family:'Inter'}
+  table.tarifs td:last-child{font-weight:600;color:var(--deep)}
+
+  .booking{background:var(--white);border:2px dashed var(--teal);border-radius:var(--radius);padding:44px 28px;text-align:center;color:var(--muted)}
+  .booking .big{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--deep);margin-bottom:8px}
+
+  .blogpost{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .blogpost .ph{height:8px;background:linear-gradient(90deg,var(--teal),var(--sand))}
+  .blogpost .body{padding:22px}
+  .blogpost .date{font-size:.74rem;letter-spacing:1px;text-transform:uppercase;color:var(--sand);font-weight:600}
+  .blogpost h3{font-size:1.25rem;margin:6px 0}
+
+  .cta-band{background:linear-gradient(135deg,var(--deep),var(--teal));color:#fff;text-align:center;padding:60px 24px}
+  .cta-band h2{color:#fff}
+  .cta-band p{color:rgba(255,255,255,.85)}
+  .cta-band .btn{background:#fff;color:var(--deep);box-shadow:none}
+
+  footer{background:var(--deep);color:#c9d6da;padding:50px 0 28px;font-size:.86rem}
+  footer .fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:30px}
+  footer h5{color:#fff;font-family:'Inter';font-size:.78rem;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
+  footer a{color:#c9d6da;display:block;margin-bottom:7px;cursor:pointer}
+  footer a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px;text-align:center;color:#8fa5ab;font-size:.78rem}
+
+  @media(max-width:960px){
+    nav.main{position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:12px;gap:2px;border-bottom:1px solid var(--line);display:none;box-shadow:var(--shadow)}
+    nav.main.open{display:flex}
+    nav.main a{padding:12px}
+    .hamburger{display:block}
+    .header-cta{display:none}
+    .g3,.persons,.g2{grid-template-columns:1fr}
+    footer .fgrid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brand" onclick="go('accueil')">
+      <svg class="mark" viewBox="0 0 64 40" fill="none">
+        <circle cx="32" cy="17" r="10" fill="#c98f5e" opacity=".28"/>
+        <g stroke="#0f3b47" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <line x1="8" y1="29" x2="56" y2="29"/>
+          <path d="M8,29 C15,29 17,16 23,14 C29,16 30,20 32,20 C34,20 35,16 41,14 C47,16 49,29 56,29"/>
+          <line x1="22" y1="29" x2="22" y2="13"/><line x1="24" y1="29" x2="24" y2="13"/>
+          <line x1="40" y1="29" x2="40" y2="13"/><line x1="42" y1="29" x2="42" y2="13"/>
+          <line x1="20" y1="13" x2="26" y2="13" stroke-width="2.2"/><line x1="38" y1="13" x2="44" y2="13" stroke-width="2.2"/>
+        </g>
+      </svg>
+      Horizons<b>-</b>Coaching
+    </div>
+    <nav class="main" id="nav">
+      <a onclick="go('valeurs')" data-p="valeurs"><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></a>
+      <a onclick="go('domaines')" data-p="domaines"><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></a>
+      <a onclick="go('methodes')" data-p="methodes"><span class="lang-fr">Nos méthodes</span><span class="lang-en">Our methods</span></a>
+      <a onclick="go('apropos')" data-p="apropos"><span class="lang-fr">À propos</span><span class="lang-en">About us</span></a>
+      <a onclick="go('infos')" data-p="infos"><span class="lang-fr">Informations &amp; RDV</span><span class="lang-en">Info &amp; booking</span></a>
+      <a onclick="go('blog')" data-p="blog"><span class="lang-fr">Blog</span><span class="lang-en">Blog</span></a>
+    </nav>
+    <div class="tools">
+      <div class="langtoggle">
+        <button id="lfr" class="on" onclick="setLang('fr')">FR</button>
+        <button id="len" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="btn small header-cta" onclick="go('infos')"><span class="lang-fr">Rendez-vous</span><span class="lang-en">Book</span></button>
+      <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ACCUEIL -->
+<div class="page active" id="accueil">
+  <div class="hero">
+    <div class="sun"></div><div class="horizon"></div>
+    <div class="wrap">
+      <div class="herologo">
+        <svg viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs><radialGradient id="hsun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7b98a"/><stop offset="55%" stop-color="#d8a46c" stop-opacity=".5"/><stop offset="100%" stop-color="#d8a46c" stop-opacity="0"/></radialGradient>
+          <linearGradient id="hhz" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0f3b47" stop-opacity="0"/><stop offset="20%" stop-color="#0f3b47"/><stop offset="80%" stop-color="#0f3b47"/><stop offset="100%" stop-color="#0f3b47" stop-opacity="0"/></linearGradient></defs>
+          <circle cx="150" cy="70" r="42" fill="url(#hsun)"/>
+          <g fill="none" stroke="#0f3b47" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="42" y1="104" x2="258" y2="104"/>
+            <path d="M42,104 C74,104 84,62 110,56 C132,61 140,74 150,74 C160,74 168,61 190,56 C216,62 226,104 258,104"/>
+            <path d="M99,104 L99,54 M121,104 L121,54"/><path d="M95,54 L125,54" stroke-width="3"/><path d="M104,54 Q110,44 116,54" stroke-width="1.8"/>
+            <path d="M179,104 L179,54 M201,104 L201,54"/><path d="M175,54 L205,54" stroke-width="3"/><path d="M184,54 Q190,44 196,54" stroke-width="1.8"/>
+            <g stroke-width="1.2" opacity=".8"><line x1="66" y1="87" x2="66" y2="104"/><line x1="82" y1="72" x2="82" y2="104"/><line x1="136" y1="70" x2="136" y2="104"/><line x1="150" y1="74" x2="150" y2="104"/><line x1="164" y1="70" x2="164" y2="104"/><line x1="218" y1="72" x2="218" y2="104"/><line x1="234" y1="87" x2="234" y2="104"/></g>
+          </g>
+          <line x1="24" y1="116" x2="276" y2="116" stroke="url(#hhz)" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="eyebrow"><span class="lang-fr">Coaching de vie amoureuse, parentale &amp; d'expatriation</span><span class="lang-en">Love, parenting &amp; expatriation life-coaching</span></div>
+      <h1>Horizons-Coaching</h1>
+      <span class="dn">HORIZONS‑COACHING.COM</span>
+      <p class="lead">
+        <span class="lang-fr">Un accompagnement humain, exigeant et personnalisé, pour éclairer vos relations, votre parentalité et vos transitions de vie — à Budapest et partout dans le monde, en ligne.</span>
+        <span class="lang-en">Human, demanding and personalised support to illuminate your relationships, parenting and life transitions — in Budapest and anywhere in the world, online.</span>
+      </p>
+      <div class="cta-row">
+        <button class="btn" onclick="go('infos')"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a session</span></button>
+        <button class="btn ghost" onclick="go('domaines')"><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></button>
+      </div>
+      <div class="loc">
+        <span class="lang-fr">📍 <b>Budapest</b> &nbsp;·&nbsp; 💻 <b>En ligne</b> dans le monde entier &nbsp;·&nbsp; 🇫🇷 Français &nbsp; 🇬🇧 English</span>
+        <span class="lang-en">📍 <b>Budapest</b> &nbsp;·&nbsp; 💻 <b>Online</b> worldwide &nbsp;·&nbsp; 🇫🇷 Français &nbsp; 🇬🇧 English</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Notre singularité</span><span class="lang-en">What sets us apart</span></div>
+      <h2><span class="lang-fr">La différence par la qualité</span><span class="lang-en">Standing out through quality</span></h2>
+      <p><span class="lang-fr">Face aux milliers de sites de coaching apparus ces dernières années, nous faisons un choix différent : la profondeur plutôt que l'effet de mode. Pas de grandes photos ni de vidéos, mais un contenu rédigé avec soin, utile, et pensé pour être trouvé — y compris par les intelligences artificielles devenues le moyen de recherche privilégié du public.</span>
+      <span class="lang-en">Amid the thousands of coaching sites of recent years, we make a different choice: depth over trend. No oversized photos or videos, but carefully written, genuinely useful content — designed to be found, including by the AI tools that have become the public's preferred way to search.</span></p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ic">♥</div><h3><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3><p><span class="lang-fr">Du couple à la séparation, un accompagnement des relations affectives.</span><span class="lang-en">From couple life to separation, support for your emotional relationships.</span></p></div>
+      <div class="card"><div class="ic">☺</div><h3><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3><p><span class="lang-fr">Éducation, enfants HPI, protection de l'enfant : un soutien à la parentalité.</span><span class="lang-en">Education, gifted children, child protection: parenting support.</span></p></div>
+      <div class="card"><div class="ic">◍</div><h3><span class="lang-fr">Expatriation</span><span class="lang-en">Expatriation</span></h3><p><span class="lang-fr">Un accompagnement de vie dans le cadre d'une expatriation, où que vous soyez.</span><span class="lang-en">Life support in an expatriation context, wherever you are.</span></p></div>
+    </div>
+    <div class="center" style="margin-top:38px"><button class="btn ghost" onclick="go('valeurs')"><span class="lang-fr">Découvrir nos valeurs</span><span class="lang-en">Discover our values</span></button></div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2><span class="lang-fr">Prêt·e à ouvrir un nouvel horizon ?</span><span class="lang-en">Ready to open a new horizon?</span></h2>
+      <p><span class="lang-fr">Réservez un premier échange, en présentiel à Budapest ou en visioconférence.</span><span class="lang-en">Book a first conversation, in person in Budapest or by video call.</span></p>
+      <br><button class="btn" onclick="go('infos')"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a session</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- VALEURS -->
+<div class="page" id="valeurs">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Qui nous sommes au fond</span><span class="lang-en">Who we truly are</span></div>
+      <h2><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></h2>
+      <span class="note"><span class="lang-fr">Texte d'exemple — à remplacer par vos textes</span><span class="lang-en">Placeholder text — to be replaced by your own copy</span></span>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h4><span class="lang-fr">Nos valeurs</span><span class="lang-en">Our values</span></h4><p><span class="lang-fr">Écoute, respect, exigence et confidentialité. Un accompagnement profondément humain, loin des recettes toutes faites.</span><span class="lang-en">Listening, respect, rigour and confidentiality. Deeply human support, far from ready-made recipes.</span></p></div>
+      <div class="card"><h4><span class="lang-fr">Notre vision du coaching de vie amoureuse</span><span class="lang-en">Our vision of love-life coaching</span></h4><p><span class="lang-fr">Accompagner chacun dans ses relations affectives, avec justesse et sans jugement.</span><span class="lang-en">Supporting each person in their emotional relationships, with care and without judgement.</span></p></div>
+      <div class="card"><h4><span class="lang-fr">Notre vision du coaching parental</span><span class="lang-en">Our vision of parenting coaching</span></h4><p><span class="lang-fr">Soutenir les parents dans leur rôle, dans le respect de l'enfant et de la famille.</span><span class="lang-en">Supporting parents in their role, with respect for the child and the family.</span></p></div>
+    </div>
+  </section>
+</div>
+
+<!-- DOMAINES -->
+<div class="page" id="domaines">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Le cœur de notre accompagnement</span><span class="lang-en">The heart of our work</span></div>
+      <h2><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></h2>
+      <span class="note"><span class="lang-fr">Structure du plan d'Isabelle — chaque rubrique recevra un texte de fond</span><span class="lang-en">Isabelle's site-plan structure — each item will receive an in-depth text</span></span>
+    </div>
+    <div class="wrap" style="max-width:920px">
+
+      <div class="theme">
+        <div class="thead"><div class="badge">1</div><h3><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3></div>
+        <div class="subs">
+          <span class="sub"><b><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Divorce et séparation</span><span class="lang-en">Divorce and separation</span></b></span>
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="thead"><div class="badge">2</div><h3><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3></div>
+        <div class="subs">
+          <span class="sub"><b><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens (HPI)</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></b></span>
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="thead"><div class="badge">3</div><h3><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3></div>
+        <div class="subs">
+          <span class="sub"><b><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Manipulations &amp; pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="thead"><div class="badge">4</div><h3><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3></div>
+        <div class="subs">
+          <span class="sub"><b><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
+          <span class="sub"><b><span class="lang-fr">Évolution de vie</span><span class="lang-en">Life evolution</span></b><span class="docs"><span class="lang-fr">3 articles</span><span class="lang-en">3 articles</span></span></span>
+          <span class="sub"><b><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults (HPI)</span></b></span>
+        </div>
+      </div>
+
+      <div class="theme">
+        <div class="thead"><div class="badge">5</div><h3><span class="lang-fr">Expatriation</span><span class="lang-en">Expatriation</span></h3></div>
+        <div class="subs">
+          <span class="sub"><b><span class="lang-fr">Projet et accompagnement dans le monde</span><span class="lang-en">Project &amp; support worldwide</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></b></span>
+          <span class="sub"><b><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="center" style="margin-top:38px">
+      <button class="btn" onclick="go('infos')"><span class="lang-fr">En parler lors d'un premier rendez-vous</span><span class="lang-en">Discuss it in a first session</span></button>
+    </div>
+  </section>
+</div>
+
+<!-- METHODES -->
+<div class="page" id="methodes">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Comment nous travaillons</span><span class="lang-en">How we work</span></div>
+      <h2><span class="lang-fr">Nos méthodes d'accompagnement</span><span class="lang-en">Our support methods</span></h2>
+      <span class="note"><span class="lang-fr">Texte d'exemple</span><span class="lang-en">Placeholder text</span></span>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h4><span class="lang-fr">Conseil et coaching</span><span class="lang-en">Advice &amp; coaching</span></h4><p><span class="lang-fr">Une approche qui allie l'écoute du coaching et, lorsque c'est utile, des repères et conseils concrets.</span><span class="lang-en">An approach that combines coaching's listening with, where useful, concrete guidance and advice.</span></p></div>
+      <div class="card"><h4><span class="lang-fr">Le coaching à la française</span><span class="lang-en">Coaching the French way</span></h4><p><span class="lang-fr">Un accompagnement individuel et sur mesure, à rebours du coaching de masse « à l'américaine ».</span><span class="lang-en">Individual, tailor-made support — the opposite of American-style mass coaching.</span></p></div>
+    </div>
+  </section>
+</div>
+
+<!-- A PROPOS -->
+<div class="page" id="apropos">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Qui sommes-nous</span><span class="lang-en">Who we are</span></div>
+      <h2><span class="lang-fr">À propos de nous</span><span class="lang-en">About us</span></h2>
+      <span class="note"><span class="lang-fr">Textes et photos à venir</span><span class="lang-en">Bios and photos to come</span></span>
+    </div>
+    <div class="wrap persons">
+      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach</span><span class="lang-en">Coach</span></p><p><span class="lang-fr">Présentation de Pearl, de son parcours et de sa pratique. (Texte à compléter.)</span><span class="lang-en">Presentation of Pearl, her background and practice. (To be completed.)</span></p></div>
+      <div class="person"><div class="avatar">I</div><h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach &amp; accompagnement</span><span class="lang-en">Coach &amp; support</span></p><p><span class="lang-fr">Présentation d'Isabelle, de son parcours et de sa complémentarité avec Pearl. (Texte à compléter.)</span><span class="lang-en">Presentation of Isabelle, her background and complementarity with Pearl. (To be completed.)</span></p></div>
+    </div>
+  </section>
+</div>
+
+<!-- INFOS & RDV -->
+<div class="page" id="infos">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">En pratique</span><span class="lang-en">In practice</span></div>
+      <h2><span class="lang-fr">Informations &amp; rendez-vous</span><span class="lang-en">Information &amp; booking</span></h2>
+    </div>
+    <div class="wrap" style="max-width:760px">
+      <h4 style="margin-bottom:14px"><span class="lang-fr">Informations et tarif</span><span class="lang-en">Information &amp; fees</span></h4>
+      <span class="note"><span class="lang-fr">Tarifs d'exemple — à définir</span><span class="lang-en">Sample fees — to be defined</span></span>
+      <table class="tarifs" style="margin-bottom:36px">
+        <tr><th><span class="lang-fr">Formule</span><span class="lang-en">Option</span></th><th><span class="lang-fr">Durée</span><span class="lang-en">Duration</span></th><th><span class="lang-fr">Tarif</span><span class="lang-en">Fee</span></th></tr>
+        <tr><td><span class="lang-fr">Premier échange</span><span class="lang-en">First conversation</span></td><td>30 min</td><td>—</td></tr>
+        <tr><td><span class="lang-fr">Séance individuelle</span><span class="lang-en">Individual session</span></td><td>60 min</td><td>—</td></tr>
+        <tr><td><span class="lang-fr">Accompagnement (5 séances)</span><span class="lang-en">Programme (5 sessions)</span></td><td>5 × 60 min</td><td>—</td></tr>
+      </table>
+
+      <h4 style="margin-bottom:14px"><span class="lang-fr">Formulaire de prise de rendez-vous</span><span class="lang-en">Booking form</span></h4>
+      <div class="booking">
+        <div class="big"><span class="lang-fr">📅 Emplacement du calendrier de réservation</span><span class="lang-en">📅 Booking calendar area</span></div>
+        <p><span class="lang-fr">Ici s'encastrera le module <b>Minup</b> : choix de la personne (Pearl / Isabelle), du format (visio ou présentiel à Budapest) et du créneau, <b>paiement en ligne</b> et <b>facture NAV automatique</b>. Le lien de visioconférence est envoyé dans l'e-mail de confirmation.</span>
+        <span class="lang-en">The <b>Minup</b> module will be embedded here: choice of person (Pearl / Isabelle), format (video or in person in Budapest) and time slot, <b>online payment</b> and <b>automatic NAV invoice</b>. The video link is sent in the confirmation e-mail.</span></p>
+      </div>
+      <div class="grid g2" style="margin-top:22px">
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Nous écrire</span><span class="lang-en">Contact us</span></h3><p><span class="lang-fr">Une question avant de réserver ?</span><span class="lang-en">A question before booking?</span><br><br>✉️ contact@horizons-coaching.com<br>📱 +36 30 083 3210</p></div>
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Où ?</span><span class="lang-en">Where?</span></h3><p><span class="lang-fr">En ligne partout dans le monde, ou à Budapest sur rendez-vous.</span><span class="lang-en">Online worldwide, or in Budapest by appointment.</span></p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG -->
+<div class="page" id="blog">
+  <section class="block">
+    <div class="center">
+      <div class="kicker"><span class="lang-fr">Pour aller plus loin</span><span class="lang-en">Going further</span></div>
+      <h2><span class="lang-fr">Le blog</span><span class="lang-en">The blog</span></h2>
+      <p><span class="lang-fr">Des articles de fond publiés au fil de l'inspiration — pour partager notre regard et nourrir la réflexion. (Sans rythme imposé.)</span>
+      <span class="lang-en">In-depth articles published as inspiration comes — to share our perspective and feed reflection. (No fixed schedule.)</span></p>
+    </div>
+    <div class="grid g3">
+      <div class="blogpost"><div class="ph"></div><div class="body"><div class="date"><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span></div><h3><span class="lang-fr">Titre de l'article</span><span class="lang-en">Article title</span></h3><p style="font-size:.92rem"><span class="lang-fr">Chapô de l'article… (texte d'exemple)</span><span class="lang-en">Article intro… (placeholder)</span></p></div></div>
+      <div class="blogpost"><div class="ph"></div><div class="body"><div class="date"><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span></div><h3><span class="lang-fr">Titre de l'article</span><span class="lang-en">Article title</span></h3><p style="font-size:.92rem"><span class="lang-fr">Chapô de l'article… (texte d'exemple)</span><span class="lang-en">Article intro… (placeholder)</span></p></div></div>
+      <div class="blogpost"><div class="ph"></div><div class="body"><div class="date"><span class="lang-fr">À venir</span><span class="lang-en">Coming soon</span></div><h3><span class="lang-fr">Titre de l'article</span><span class="lang-en">Article title</span></h3><p style="font-size:.92rem"><span class="lang-fr">Chapô de l'article… (texte d'exemple)</span><span class="lang-en">Article intro… (placeholder)</span></p></div></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand" style="font-size:1.35rem;margin-bottom:12px;color:#fff">Horizons<b style="color:var(--sand)">-</b>Coaching</div>
+        <p style="color:#9db4ba;max-width:320px"><span class="lang-fr">Coaching de vie amoureuse, parentale et d'expatriation, en français et en anglais. À Budapest et en ligne dans le monde entier.</span><span class="lang-en">Love, parenting and expatriation life-coaching, in French and English. In Budapest and online worldwide.</span></p>
+      </div>
+      <div>
+        <h5><span class="lang-fr">Navigation</span><span class="lang-en">Navigation</span></h5>
+        <a onclick="go('valeurs')"><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Values &amp; goals</span></a>
+        <a onclick="go('domaines')"><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></a>
+        <a onclick="go('methodes')"><span class="lang-fr">Nos méthodes</span><span class="lang-en">Our methods</span></a>
+        <a onclick="go('apropos')"><span class="lang-fr">À propos</span><span class="lang-en">About us</span></a>
+        <a onclick="go('blog')">Blog</a>
+      </div>
+      <div>
+        <h5><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></h5>
+        <a onclick="go('infos')"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a session</span></a>
+        <a>✉️ contact@horizons-coaching.com</a>
+        <a>📍 Budapest, Hongrie</a>
+      </div>
+    </div>
+    <div class="foot-bottom"><span class="lang-fr">Maquette de démonstration — Horizons‑Coaching.com · Contenus provisoires</span><span class="lang-en">Demo mockup — Horizons‑Coaching.com · Placeholder content</span></div>
+  </div>
+</footer>
+
+<script>
+  function go(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    var el=document.getElementById(id); if(el) el.classList.add('active');
+    document.querySelectorAll('nav.main a').forEach(a=>a.classList.toggle('active',a.dataset.p===id));
+    document.getElementById('nav').classList.remove('open');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function setLang(l){
+    document.body.classList.toggle('en',l==='en');
+    document.documentElement.lang=l;
+    document.getElementById('lfr').classList.toggle('on',l==='fr');
+    document.getElementById('len').classList.toggle('on',l==='en');
+  }
+</script>
+</body>
+</html>
