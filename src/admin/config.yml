@@ -3,6 +3,7 @@ backend:
   name: github
   repo: horizons-coaching/horizons-coaching-site
   branch: main
+  base_url: https://sveltia-cms-auth.horizonscoaching-bp.workers.dev
 
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
@@ -19,4 +20,5 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "Langue", name: "lang", widget: "select", options: ["fr", "en"], default: "fr" }
       - { label: "Résumé (facultatif)", name: "excerpt", widget: "text", required: false }
+      - { label: "Image (facultatif)", name: "image", widget: "image", required: false }
       - { label: "Contenu", name: "body", widget: "markdown" }
