@@ -44,6 +44,9 @@
   .herologo{margin:0 auto 4px}
   .herologo svg{width:clamp(150px,26vw,190px);height:auto}
   .brand b{color:var(--sand)}
+  .brandtxt{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:1.02rem;letter-spacing:1px;color:var(--deep);white-space:nowrap}
+  .brandtxt .dot{color:var(--sand)}
+  @media(max-width:430px){.brandtxt{font-size:.8rem;letter-spacing:.3px}}
   nav.main{display:flex;gap:2px;align-items:center;flex-wrap:wrap}
   nav.main a{color:var(--ink);font-size:.78rem;font-weight:500;padding:8px 10px;border-radius:8px;cursor:pointer;white-space:nowrap}
   nav.main a:hover{background:var(--teal-soft);color:var(--deep)}
@@ -193,6 +196,7 @@
           <line x1="20" y1="13" x2="26" y2="13" stroke-width="2.2"/><line x1="38" y1="13" x2="44" y2="13" stroke-width="2.2"/>
         </g>
       </svg>
+      <span class="brandtxt">HORIZONS<b>-</b>COACHING<span class="dot">.COM</span></span>
     </div>
     <nav class="main" id="nav">
       <a onclick="go('valeurs')" data-p="valeurs"><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></a>
