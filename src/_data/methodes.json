@@ -1,0 +1,20 @@
+{
+  "kicker_fr": "Comment nous travaillons",
+  "kicker_en": "How we work",
+  "h2_fr": "Nos méthodes d'accompagnement",
+  "h2_en": "Our support methods",
+  "cartes": [
+    {
+      "titre_fr": "Conseil et coaching",
+      "titre_en": "Advice & coaching",
+      "texte_fr": "Une approche qui allie l'écoute du coaching et, lorsque c'est utile, des repères et conseils concrets.",
+      "texte_en": "An approach that combines coaching's listening with, where useful, concrete guidance and advice."
+    },
+    {
+      "titre_fr": "Le coaching à la française",
+      "titre_en": "Coaching the French way",
+      "texte_fr": "Un accompagnement individuel et sur mesure, à rebours du coaching de masse « à l'américaine ».",
+      "texte_en": "Individual, tailor-made support — the opposite of American-style mass coaching."
+    }
+  ]
+}
