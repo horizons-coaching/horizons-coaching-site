@@ -64,6 +64,108 @@ collections:
               - { label: "Prix", name: "prix", widget: "string" }
               - { label: "Conclusion (FR)", name: "closing_fr", widget: "string" }
               - { label: "Conclusion (EN)", name: "closing_en", widget: "string" }
+      - name: "valeurs"
+        label: "Nos valeurs & nos buts"
+        file: "src/_data/valeurs.json"
+        fields:
+          - { label: "Sur-titre (FR)", name: "kicker_fr", widget: "string" }
+          - { label: "Sur-titre (EN)", name: "kicker_en", widget: "string" }
+          - { label: "Titre (FR)", name: "h2_fr", widget: "string" }
+          - { label: "Titre (EN)", name: "h2_en", widget: "string" }
+          - label: "Cartes"
+            name: "cartes"
+            widget: "list"
+            fields:
+              - { label: "Titre (FR)", name: "titre_fr", widget: "string" }
+              - { label: "Titre (EN)", name: "titre_en", widget: "string" }
+              - { label: "Texte (FR)", name: "texte_fr", widget: "text" }
+              - { label: "Texte (EN)", name: "texte_en", widget: "text" }
+      - name: "domaines"
+        label: "Domaines d'intervention"
+        file: "src/_data/domaines.json"
+        description: "Ces catégories s'affichent à la fois sur la page d'accueil (pavés colorés) et sur la page Domaines. Vous pouvez renommer, ajouter ou supprimer des catégories et des sous-catégories."
+        fields:
+          - { label: "Sur-titre (FR)", name: "kicker_fr", widget: "string" }
+          - { label: "Sur-titre (EN)", name: "kicker_en", widget: "string" }
+          - { label: "Titre (FR)", name: "h2_fr", widget: "string" }
+          - { label: "Titre (EN)", name: "h2_en", widget: "string" }
+          - { label: "Introduction (FR)", name: "intro_fr", widget: "text", required: false }
+          - { label: "Introduction (EN)", name: "intro_en", widget: "text", required: false }
+          - label: "Catégories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Titre de la catégorie (FR)", name: "titre_fr", widget: "string" }
+              - { label: "Titre de la catégorie (EN)", name: "titre_en", widget: "string" }
+              - label: "Sous-catégories"
+                name: "sous"
+                widget: "list"
+                fields:
+                  - { label: "FR", name: "fr", widget: "string" }
+                  - { label: "EN", name: "en", widget: "string" }
+      - name: "methodes"
+        label: "Nos méthodes"
+        file: "src/_data/methodes.json"
+        fields:
+          - { label: "Sur-titre (FR)", name: "kicker_fr", widget: "string" }
+          - { label: "Sur-titre (EN)", name: "kicker_en", widget: "string" }
+          - { label: "Titre (FR)", name: "h2_fr", widget: "string" }
+          - { label: "Titre (EN)", name: "h2_en", widget: "string" }
+          - label: "Cartes"
+            name: "cartes"
+            widget: "list"
+            fields:
+              - { label: "Titre (FR)", name: "titre_fr", widget: "string" }
+              - { label: "Titre (EN)", name: "titre_en", widget: "string" }
+              - { label: "Texte (FR)", name: "texte_fr", widget: "text" }
+              - { label: "Texte (EN)", name: "texte_en", widget: "text" }
+      - name: "apropos"
+        label: "À propos"
+        file: "src/_data/apropos.json"
+        description: "Les biographies d'Isabelle et de Pearl se modifient dans « Page d'accueil » (elles sont partagées avec l'accueil)."
+        fields:
+          - { label: "Sur-titre (FR)", name: "kicker_fr", widget: "string" }
+          - { label: "Sur-titre (EN)", name: "kicker_en", widget: "string" }
+          - { label: "Titre (FR)", name: "h2_fr", widget: "string" }
+          - { label: "Titre (EN)", name: "h2_en", widget: "string" }
+          - { label: "Rôle de Pearl (FR)", name: "pearl_role_fr", widget: "string" }
+          - { label: "Rôle de Pearl (EN)", name: "pearl_role_en", widget: "string" }
+          - { label: "Rôle d'Isabelle (FR)", name: "isabelle_role_fr", widget: "string" }
+          - { label: "Rôle d'Isabelle (EN)", name: "isabelle_role_en", widget: "string" }
+      - name: "infos"
+        label: "Informations & RDV"
+        file: "src/_data/infos.json"
+        description: "Le formulaire de réservation Minup reste géré automatiquement ; vous modifiez ici les textes autour."
+        fields:
+          - { label: "Sur-titre (FR)", name: "kicker_fr", widget: "string" }
+          - { label: "Sur-titre (EN)", name: "kicker_en", widget: "string" }
+          - { label: "Titre (FR)", name: "h2_fr", widget: "string" }
+          - { label: "Titre (EN)", name: "h2_en", widget: "string" }
+          - { label: "Titre — tarif (FR)", name: "tarif_titre_fr", widget: "string" }
+          - { label: "Titre — tarif (EN)", name: "tarif_titre_en", widget: "string" }
+          - { label: "Intro — tarif (FR)", name: "tarif_intro_fr", widget: "text" }
+          - { label: "Intro — tarif (EN)", name: "tarif_intro_en", widget: "text" }
+          - { label: "Tableau — Formule (FR)", name: "ligne_formule_fr", widget: "string" }
+          - { label: "Tableau — Formule (EN)", name: "ligne_formule_en", widget: "string" }
+          - { label: "Tableau — Durée (FR)", name: "ligne_duree_fr", widget: "string" }
+          - { label: "Tableau — Durée (EN)", name: "ligne_duree_en", widget: "string" }
+          - { label: "Tableau — Prix", name: "ligne_prix", widget: "string" }
+          - { label: "Titre — réservation (FR)", name: "booking_titre_fr", widget: "string" }
+          - { label: "Titre — réservation (EN)", name: "booking_titre_en", widget: "string" }
+          - { label: "Consigne — réservation (FR)", name: "booking_hint_fr", widget: "text" }
+          - { label: "Consigne — réservation (EN)", name: "booking_hint_en", widget: "text" }
+          - { label: "Note Minup (FR)", name: "minup_note_fr", widget: "text" }
+          - { label: "Note Minup (EN)", name: "minup_note_en", widget: "text" }
+          - { label: "Contact — titre (FR)", name: "contact_titre_fr", widget: "string" }
+          - { label: "Contact — titre (EN)", name: "contact_titre_en", widget: "string" }
+          - { label: "Contact — intro (FR)", name: "contact_intro_fr", widget: "string" }
+          - { label: "Contact — intro (EN)", name: "contact_intro_en", widget: "string" }
+          - { label: "Contact — e-mail", name: "contact_email", widget: "string" }
+          - { label: "Contact — téléphone", name: "contact_tel", widget: "string" }
+          - { label: "Où — titre (FR)", name: "ou_titre_fr", widget: "string" }
+          - { label: "Où — titre (EN)", name: "ou_titre_en", widget: "string" }
+          - { label: "Où — texte (FR)", name: "ou_texte_fr", widget: "text" }
+          - { label: "Où — texte (EN)", name: "ou_texte_en", widget: "text" }
   - name: "blog"
     label: "Articles du blog"
     label_singular: "Article"
