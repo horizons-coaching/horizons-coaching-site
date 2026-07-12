@@ -9,6 +9,16 @@ media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
+  - name: "identite"
+    label: "Logo & identité"
+    files:
+      - name: "identite"
+        label: "Logo du site"
+        file: "src/_data/site.json"
+        description: "Déposez ici votre logo : il remplacera automatiquement le logo provisoire dans l'en-tête, sur toutes les pages. Laissez vide pour garder le logo actuel."
+        fields:
+          - { label: "Logo (facultatif)", name: "logo", widget: "image", required: false }
+
   - name: "accueil"
     label: "Page d'accueil"
     files:
@@ -27,6 +37,7 @@ collections:
               - { label: "Accroche (EN)", name: "accroche_en", widget: "text" }
               - { label: "Visio / présentiel (FR)", name: "visio_fr", widget: "text" }
               - { label: "Visio / présentiel (EN)", name: "visio_en", widget: "text" }
+              - { label: "Photo d'accueil (facultatif)", name: "photo", widget: "image", required: false }
           - label: "Formule"
             name: "formule"
             widget: "object"
@@ -55,6 +66,8 @@ collections:
               - { label: "Isabelle (EN)", name: "isabelle_en", widget: "text" }
               - { label: "Pearl (FR)", name: "pearl_fr", widget: "text" }
               - { label: "Pearl (EN)", name: "pearl_en", widget: "text" }
+              - { label: "Photo d'Isabelle (facultatif)", name: "isabelle_photo", widget: "image", required: false }
+              - { label: "Photo de Pearl (facultatif)", name: "pearl_photo", widget: "image", required: false }
           - label: "Tarif"
             name: "tarif"
             widget: "object"
