@@ -1,0 +1,104 @@
+{
+  "kicker_fr": "Le cœur de notre accompagnement",
+  "kicker_en": "The heart of our work",
+  "h2_fr": "Domaines d'intervention",
+  "h2_en": "Areas of support",
+  "intro_fr": "",
+  "intro_en": "",
+  "categories": [
+    {
+      "titre_fr": "Vie amoureuse",
+      "titre_en": "Love life",
+      "sous": [
+        {
+          "fr": "Recherche de partenaire de vie",
+          "en": "Finding a life partner"
+        },
+        {
+          "fr": "Vie conjugale",
+          "en": "Married life"
+        },
+        {
+          "fr": "Difficultés de couple",
+          "en": "Couple difficulties"
+        },
+        {
+          "fr": "Divorce et séparation",
+          "en": "Divorce and separation"
+        }
+      ]
+    },
+    {
+      "titre_fr": "Parentalité",
+      "titre_en": "Parenting",
+      "sous": [
+        {
+          "fr": "Développement et éducation de l'enfant",
+          "en": "Child development & education"
+        },
+        {
+          "fr": "Enfants et adolescents HPI",
+          "en": "Gifted children & teens (HPI)"
+        },
+        {
+          "fr": "Protection de l'enfant",
+          "en": "Child protection"
+        }
+      ]
+    },
+    {
+      "titre_fr": "Situations de vie difficiles",
+      "titre_en": "Difficult life situations",
+      "sous": [
+        {
+          "fr": "Épreuves de vie",
+          "en": "Life ordeals"
+        },
+        {
+          "fr": "Violences conjugales",
+          "en": "Domestic violence"
+        },
+        {
+          "fr": "Manipulations et pervers narcissiques",
+          "en": "Manipulation & narcissistic abuse"
+        }
+      ]
+    },
+    {
+      "titre_fr": "Épanouissement personnel",
+      "titre_en": "Personal fulfilment",
+      "sous": [
+        {
+          "fr": "Amélioration de vie",
+          "en": "Improving your life"
+        },
+        {
+          "fr": "Évolution et changement de vie",
+          "en": "Life evolution & change"
+        },
+        {
+          "fr": "Accompagnement spécifique Personnes HPI",
+          "en": "Support for gifted adults (HPI)"
+        }
+      ]
+    },
+    {
+      "titre_fr": "Expatriation dans le monde",
+      "titre_en": "Expatriation worldwide",
+      "sous": [
+        {
+          "fr": "Projet et accompagnement",
+          "en": "Project & support"
+        },
+        {
+          "fr": "Difficultés de vie en expatriation",
+          "en": "Life difficulties abroad"
+        },
+        {
+          "fr": "Accompagnement spécial Budapest",
+          "en": "Special Budapest support"
+        }
+      ]
+    }
+  ]
+}
