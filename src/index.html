@@ -44,6 +44,8 @@
   header .wrap{max-width:1500px;padding:0 16px}
   .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;cursor:pointer;white-space:nowrap}
   .brand .mark{width:54px;height:36px;flex:none}
+  .brand-logo{height:60px;width:auto;max-width:280px;display:block;object-fit:contain}
+  @media(max-width:620px){.brand-logo{height:48px;max-width:190px}}
   .herologo{margin:0 auto 4px}
   .herologo svg{width:clamp(150px,26vw,190px);height:auto}
   .brand b{color:#ffe6cf}
@@ -77,7 +79,9 @@
   .hero .eyebrow{font-size:.85rem;letter-spacing:3px;text-transform:uppercase;color:var(--brandbar);font-weight:700;margin-bottom:16px}
   .hero .dn{display:inline-block;margin-top:14px;font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:2px;color:var(--deep);font-weight:700;font-family:'Cormorant Garamond',Georgia,serif;border:1px solid var(--teal-soft);background:#fff;padding:8px 22px;border-radius:24px}
   .hero p.lead{font-size:1.15rem;max-width:640px;margin:20px auto 30px;color:#41525b}
-  .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero-photo{margin:22px auto 6px;max-width:620px}
+  .hero-photo img{width:100%;height:auto;border-radius:18px;box-shadow:0 18px 50px rgba(120,80,40,.22);display:block}
+  .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:22px}
   .loc{margin-top:26px;font-size:.8rem;color:var(--muted);letter-spacing:.5px}
   .loc b{color:var(--teal)}
 
@@ -204,6 +208,9 @@
 <header>
   <div class="wrap bar">
     <div class="brand" onclick="go('accueil')">
+      {% if site.logo %}
+      <img class="brand-logo" src="{{ site.logo }}" alt="Horizons-Coaching">
+      {% else %}
       <svg class="mark" viewBox="0 0 64 40" fill="none">
         <circle cx="32" cy="17" r="10" fill="#ffffff" opacity=".22"/>
         <g stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
@@ -215,6 +222,7 @@
         </g>
       </svg>
       <span class="brandtxt">HORIZONS<b>-</b>COACHING<span class="dot">.COM</span></span>
+      {% endif %}
     </div>
     <nav class="main" id="nav">
       <a onclick="go('valeurs')" data-p="valeurs"><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></a>
@@ -249,6 +257,9 @@
         <span class="lang-fr">{{ accueil.hero.accroche_fr }}</span>
         <span class="lang-en">{{ accueil.hero.accroche_en }}</span>
       </p>
+      {% if accueil.hero.photo %}
+      <div class="hero-photo"><img src="{{ accueil.hero.photo }}" alt="Horizons-Coaching"></div>
+      {% endif %}
       <div class="cta-row">
         <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
         <button class="btn ghost" onclick="go('domaines')"><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></button>
@@ -301,8 +312,8 @@
       <p><span class="lang-fr">{{ accueil.conseilleres.intro_fr }}</span><span class="lang-en">{{ accueil.conseilleres.intro_en }}</span></p>
     </div>
     <div class="wrap persons">
-      <div class="person"><div class="avatar">I</div><h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
-      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
+      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
+      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
     </div>
     <div class="center" style="margin-top:28px">
       <p><span class="lang-fr">{{ accueil.conseilleres.choisir_fr }}</span><span class="lang-en">{{ accueil.conseilleres.choisir_en }}</span></p>
@@ -381,8 +392,8 @@
       <div class="kicker"><span class="lang-fr">{{ apropos.kicker_fr }}</span><span class="lang-en">{{ apropos.kicker_en }}</span></div>
       <h2><span class="lang-fr">{{ apropos.h2_fr }}</span><span class="lang-en">{{ apropos.h2_en }}</span></h2>    </div>
     <div class="wrap persons">
-      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.pearl_role_fr }}</span><span class="lang-en">{{ apropos.pearl_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
-      <div class="person"><div class="avatar">I</div><h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.isabelle_role_fr }}</span><span class="lang-en">{{ apropos.isabelle_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
+      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.pearl_role_fr }}</span><span class="lang-en">{{ apropos.pearl_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
+      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.isabelle_role_fr }}</span><span class="lang-en">{{ apropos.isabelle_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
     </div>
   </section>
 </div>
