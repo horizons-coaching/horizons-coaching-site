@@ -120,6 +120,9 @@
   .pave.c3{background:linear-gradient(160deg,#7b74a6,#565081)}
   .pave.c4{background:linear-gradient(160deg,#c9a15e,#a67c3a)}
   .pave.c5{background:linear-gradient(160deg,#3f93a6,#2c6f80)}
+  .pave.c6{background:linear-gradient(160deg,#b0794b,#8a5a30)}
+  .pave.c7{background:linear-gradient(160deg,#8f8578,#665f54)}
+  .pave.c8{background:linear-gradient(160deg,#5a86a6,#3d6180)}
   @media(max-width:900px){.paves{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){
     .paves{grid-template-columns:1fr}
@@ -280,37 +283,12 @@
     </div>
     <div class="wrap">
       <div class="paves">
-        <div class="pave c1">
-          <h3 onclick="go('domaines')"><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Divorce et séparation</span><span class="lang-en">Divorce and separation</span></a>
+        {% for cat in domaines.categories %}
+        <div class="pave c{{ (loop.index0 % 8) + 1 }}">
+          <h3 onclick="go('domaines')"><span class="lang-fr">{{ cat.titre_fr }}</span><span class="lang-en">{{ cat.titre_en }}</span></h3>
+          {% for s in cat.sous %}<a class="pl" onclick="go('domaines')"><span class="lang-fr">{{ s.fr }}</span><span class="lang-en">{{ s.en }}</span></a>{% endfor %}
         </div>
-        <div class="pave c2">
-          <h3 onclick="go('domaines')"><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></a>
-        </div>
-        <div class="pave c3">
-          <h3 onclick="go('domaines')"><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Manipulations et pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></a>
-        </div>
-        <div class="pave c4">
-          <h3 onclick="go('domaines')"><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults</span></a>
-        </div>
-        <div class="pave c5">
-          <h3 onclick="go('domaines')"><span class="lang-fr">Expatriation dans le monde</span><span class="lang-en">Expatriation worldwide</span></h3>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Projet et accompagnement</span><span class="lang-en">Project &amp; support</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></a>
-          <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></a>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -352,12 +330,10 @@
 <div class="page" id="valeurs">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">Qui nous sommes au fond</span><span class="lang-en">Who we truly are</span></div>
-      <h2><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ valeurs.kicker_fr }}</span><span class="lang-en">{{ valeurs.kicker_en }}</span></div>
+      <h2><span class="lang-fr">{{ valeurs.h2_fr }}</span><span class="lang-en">{{ valeurs.h2_en }}</span></h2>    </div>
     <div class="grid g3">
-      <div class="card"><h4><span class="lang-fr">Nos valeurs</span><span class="lang-en">Our values</span></h4><p><span class="lang-fr">Écoute, respect, exigence et confidentialité. Un accompagnement profondément humain, loin des recettes toutes faites.</span><span class="lang-en">Listening, respect, rigour and confidentiality. Deeply human support, far from ready-made recipes.</span></p></div>
-      <div class="card"><h4><span class="lang-fr">Notre vision du coaching de vie amoureuse</span><span class="lang-en">Our vision of love-life coaching</span></h4><p><span class="lang-fr">Accompagner chacun dans ses relations affectives, avec justesse et sans jugement.</span><span class="lang-en">Supporting each person in their emotional relationships, with care and without judgement.</span></p></div>
-      <div class="card"><h4><span class="lang-fr">Notre vision du coaching parental</span><span class="lang-en">Our vision of parenting coaching</span></h4><p><span class="lang-fr">Soutenir les parents dans leur rôle, dans le respect de l'enfant et de la famille.</span><span class="lang-en">Supporting parents in their role, with respect for the child and the family.</span></p></div>
+      {% for c in valeurs.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr }}</span><span class="lang-en">{{ c.titre_en }}</span></h4><p><span class="lang-fr">{{ c.texte_fr }}</span><span class="lang-en">{{ c.texte_en }}</span></p></div>{% endfor %}
     </div>
   </section>
 </div>
@@ -366,55 +342,18 @@
 <div class="page" id="domaines">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">Le cœur de notre accompagnement</span><span class="lang-en">The heart of our work</span></div>
-      <h2><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ domaines.kicker_fr }}</span><span class="lang-en">{{ domaines.kicker_en }}</span></div>
+      <h2><span class="lang-fr">{{ domaines.h2_fr }}</span><span class="lang-en">{{ domaines.h2_en }}</span></h2>    </div>
     <div class="wrap" style="max-width:920px">
 
+      {% for cat in domaines.categories %}
       <div class="theme">
-        <div class="thead"><div class="badge">1</div><h3><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3></div>
+        <div class="thead"><div class="badge">{{ loop.index }}</div><h3><span class="lang-fr">{{ cat.titre_fr }}</span><span class="lang-en">{{ cat.titre_en }}</span></h3></div>
         <div class="subs">
-          <span class="sub"><b><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Divorce et séparation</span><span class="lang-en">Divorce and separation</span></b></span>
+          {% for s in cat.sous %}<span class="sub"><b><span class="lang-fr">{{ s.fr }}</span><span class="lang-en">{{ s.en }}</span></b></span>{% endfor %}
         </div>
       </div>
-
-      <div class="theme">
-        <div class="thead"><div class="badge">2</div><h3><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3></div>
-        <div class="subs">
-          <span class="sub"><b><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens (HPI)</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></b></span>
-        </div>
-      </div>
-
-      <div class="theme">
-        <div class="thead"><div class="badge">3</div><h3><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3></div>
-        <div class="subs">
-          <span class="sub"><b><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Manipulations &amp; pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
-        </div>
-      </div>
-
-      <div class="theme">
-        <div class="thead"><div class="badge">4</div><h3><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3></div>
-        <div class="subs">
-          <span class="sub"><b><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
-          <span class="sub"><b><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults (HPI)</span></b></span>
-        </div>
-      </div>
-
-      <div class="theme">
-        <div class="thead"><div class="badge">5</div><h3><span class="lang-fr">Expatriation</span><span class="lang-en">Expatriation</span></h3></div>
-        <div class="subs">
-          <span class="sub"><b><span class="lang-fr">Projet et accompagnement dans le monde</span><span class="lang-en">Project &amp; support worldwide</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></b></span>
-          <span class="sub"><b><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></b><span class="docs"><span class="lang-fr">2 articles</span><span class="lang-en">2 articles</span></span></span>
-        </div>
-      </div>
+      {% endfor %}
 
     </div>
     <div class="center" style="margin-top:38px">
@@ -427,11 +366,10 @@
 <div class="page" id="methodes">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">Comment nous travaillons</span><span class="lang-en">How we work</span></div>
-      <h2><span class="lang-fr">Nos méthodes d'accompagnement</span><span class="lang-en">Our support methods</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ methodes.kicker_fr }}</span><span class="lang-en">{{ methodes.kicker_en }}</span></div>
+      <h2><span class="lang-fr">{{ methodes.h2_fr }}</span><span class="lang-en">{{ methodes.h2_en }}</span></h2>    </div>
     <div class="grid g2">
-      <div class="card"><h4><span class="lang-fr">Conseil et coaching</span><span class="lang-en">Advice &amp; coaching</span></h4><p><span class="lang-fr">Une approche qui allie l'écoute du coaching et, lorsque c'est utile, des repères et conseils concrets.</span><span class="lang-en">An approach that combines coaching's listening with, where useful, concrete guidance and advice.</span></p></div>
-      <div class="card"><h4><span class="lang-fr">Le coaching à la française</span><span class="lang-en">Coaching the French way</span></h4><p><span class="lang-fr">Un accompagnement individuel et sur mesure, à rebours du coaching de masse « à l'américaine ».</span><span class="lang-en">Individual, tailor-made support — the opposite of American-style mass coaching.</span></p></div>
+      {% for c in methodes.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr }}</span><span class="lang-en">{{ c.titre_en }}</span></h4><p><span class="lang-fr">{{ c.texte_fr }}</span><span class="lang-en">{{ c.texte_en }}</span></p></div>{% endfor %}
     </div>
   </section>
 </div>
@@ -440,11 +378,11 @@
 <div class="page" id="apropos">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">Qui sommes-nous</span><span class="lang-en">Who we are</span></div>
-      <h2><span class="lang-fr">À propos de nous</span><span class="lang-en">About us</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ apropos.kicker_fr }}</span><span class="lang-en">{{ apropos.kicker_en }}</span></div>
+      <h2><span class="lang-fr">{{ apropos.h2_fr }}</span><span class="lang-en">{{ apropos.h2_en }}</span></h2>    </div>
     <div class="wrap persons">
-      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach</span><span class="lang-en">Coach</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
-      <div class="person"><div class="avatar">I</div><h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach &amp; accompagnement</span><span class="lang-en">Coach &amp; support</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
+      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.pearl_role_fr }}</span><span class="lang-en">{{ apropos.pearl_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
+      <div class="person"><div class="avatar">I</div><h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.isabelle_role_fr }}</span><span class="lang-en">{{ apropos.isabelle_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
     </div>
   </section>
 </div>
@@ -453,27 +391,27 @@
 <div class="page" id="infos">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">En pratique</span><span class="lang-en">In practice</span></div>
-      <h2><span class="lang-fr">Informations &amp; rendez-vous</span><span class="lang-en">Information &amp; booking</span></h2>
+      <div class="kicker"><span class="lang-fr">{{ infos.kicker_fr }}</span><span class="lang-en">{{ infos.kicker_en }}</span></div>
+      <h2><span class="lang-fr">{{ infos.h2_fr }}</span><span class="lang-en">{{ infos.h2_en }}</span></h2>
     </div>
     <div class="wrap" style="max-width:760px">
-      <h4 style="margin-bottom:14px"><span class="lang-fr">Informations et tarif</span><span class="lang-en">Information &amp; fees</span></h4>
-      <p><span class="lang-fr">Une facturation à la séance, sans forfait : vous ne réglez que les séances qui vous sont nécessaires.</span><span class="lang-en">Billing per session, no package: you only pay for the sessions you actually need.</span></p>
+      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.tarif_titre_fr }}</span><span class="lang-en">{{ infos.tarif_titre_en }}</span></h4>
+      <p><span class="lang-fr">{{ infos.tarif_intro_fr }}</span><span class="lang-en">{{ infos.tarif_intro_en }}</span></p>
       <table class="tarifs" style="margin-bottom:36px">
         <tr><th><span class="lang-fr">Formule</span><span class="lang-en">Option</span></th><th><span class="lang-fr">Durée</span><span class="lang-en">Duration</span></th><th><span class="lang-fr">Tarif</span><span class="lang-en">Fee</span></th></tr>
-        <tr><td><span class="lang-fr">Conseil ou coaching de vie personnelle</span><span class="lang-en">Personal-life advice or coaching</span></td><td><span class="lang-fr">1 heure</span><span class="lang-en">1 hour</span></td><td>70 € / 25 000 HUF</td></tr>
+        <tr><td><span class="lang-fr">{{ infos.ligne_formule_fr }}</span><span class="lang-en">{{ infos.ligne_formule_en }}</span></td><td><span class="lang-fr">{{ infos.ligne_duree_fr }}</span><span class="lang-en">{{ infos.ligne_duree_en }}</span></td><td>{{ infos.ligne_prix }}</td></tr>
       </table>
 
-      <h4 style="margin-bottom:14px"><span class="lang-fr">Formulaire de prise de rendez-vous</span><span class="lang-en">Booking form</span></h4>
-      <p style="text-align:center;color:#41525b;font-size:.92rem;margin-bottom:16px"><span class="lang-fr">💬 Au moment de réserver, <b>indiquez votre thématique</b> dans le champ « message » (vie amoureuse, parentalité, situation de vie difficile, épanouissement personnel, expatriation…), pour que votre conseillère prépare au mieux votre séance.</span><span class="lang-en">💬 When booking, <b>mention your topic</b> in the “message” field (love life, parenting, difficult life situation, personal fulfilment, expatriation…), so your advisor can best prepare your session.</span></p>
+      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.booking_titre_fr }}</span><span class="lang-en">{{ infos.booking_titre_en }}</span></h4>
+      <p style="text-align:center;color:#41525b;font-size:.92rem;margin-bottom:16px"><span class="lang-fr">💬 {{ infos.booking_hint_fr }}</span><span class="lang-en">💬 {{ infos.booking_hint_en }}</span></p>
       <div class="bookwrap">
         <iframe src="https://app.minup.io/embed/horizons-coaching/service/78707?teamMemberId=2cfffdaa-8db9-4cd3-80ac-0b7145b0070a&amp;canStartPayment=true" title="Réservation en ligne — Horizons-Coaching" style="width:100%;height:500px;max-width:100%;border:1px solid var(--line);border-radius:14px;background:#fff" loading="lazy"></iframe>
-        <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px"><span class="lang-fr">Réservation en ligne sécurisée via <b>Minup</b>. Le paiement en ligne et la facture automatique seront activés dès la création de la société.</span><span class="lang-en">Secure online booking via <b>Minup</b>. Online payment and automatic invoicing will be enabled once the company is set up.</span></p>
+        <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px"><span class="lang-fr">{{ infos.minup_note_fr }}</span><span class="lang-en">{{ infos.minup_note_en }}</span></p>
       </div>
       <script>window.addEventListener("message",function(e){if(e.origin!=="https://app.minup.io")return;var d=e.data;if(d&&d.type==="redirect_to_payment"){window.location.href=d.url;}});</script>
       <div class="grid g2" style="margin-top:22px">
-        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Nous écrire</span><span class="lang-en">Contact us</span></h3><p><span class="lang-fr">Une question avant de réserver ?</span><span class="lang-en">A question before booking?</span><br><br>✉️ contact@horizons-coaching.com<br>📱 +36 30 083 3210</p></div>
-        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">Où ?</span><span class="lang-en">Where?</span></h3><p><span class="lang-fr">En ligne partout dans le monde, ou à Budapest sur rendez-vous.</span><span class="lang-en">Online worldwide, or in Budapest by appointment.</span></p></div>
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.contact_titre_fr }}</span><span class="lang-en">{{ infos.contact_titre_en }}</span></h3><p><span class="lang-fr">{{ infos.contact_intro_fr }}</span><span class="lang-en">{{ infos.contact_intro_en }}</span><br><br>✉️ {{ infos.contact_email }}<br>📱 {{ infos.contact_tel }}</p></div>
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.ou_titre_fr }}</span><span class="lang-en">{{ infos.ou_titre_en }}</span></h3><p><span class="lang-fr">{{ infos.ou_texte_fr }}</span><span class="lang-en">{{ infos.ou_texte_en }}</span></p></div>
       </div>
     </div>
   </section>
