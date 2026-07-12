@@ -41,20 +41,20 @@
 
   header{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--brandbar),var(--brandbar2));box-shadow:0 2px 14px rgba(0,0,0,.14)}
   .bar{display:flex;align-items:center;justify-content:space-between;height:92px;gap:10px}
-  header .wrap{max-width:1340px}
+  header .wrap{max-width:1500px;padding:0 16px}
   .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;cursor:pointer;white-space:nowrap}
   .brand .mark{width:54px;height:36px;flex:none}
   .herologo{margin:0 auto 4px}
   .herologo svg{width:clamp(150px,26vw,190px);height:auto}
   .brand b{color:#ffe6cf}
-  .brandtxt{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:1.02rem;letter-spacing:.5px;color:#fff;white-space:nowrap}
+  .brandtxt{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:.9rem;letter-spacing:.3px;color:#fff;white-space:nowrap}
   .brandtxt .dot{color:#ffe0c2}
   @media(max-width:520px){.brandtxt{font-size:.92rem;letter-spacing:.3px}}
   nav.main{display:flex;gap:2px;align-items:center;flex-wrap:wrap}
-  nav.main a{color:#fff;font-size:.92rem;font-weight:600;padding:8px 9px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  nav.main a{color:#fff;font-size:.9rem;font-weight:600;padding:8px 6px;border-radius:8px;cursor:pointer;white-space:nowrap}
   nav.main a:hover{background:rgba(255,255,255,.18);color:#fff}
   nav.main a.active{background:rgba(255,255,255,.24);color:#fff}
-  .tools{display:flex;align-items:center;gap:10px}
+  .tools{display:flex;align-items:center;gap:8px}
   .langtoggle{display:flex;border:1px solid rgba(255,255,255,.6);border-radius:20px;overflow:hidden;font-size:.74rem;font-weight:700}
   .langtoggle button{border:none;background:transparent;padding:6px 11px;cursor:pointer;color:#fff}
   .langtoggle button.on{background:#fff;color:var(--brandbar2)}
@@ -112,7 +112,6 @@
   .pave:hover{transform:translateY(-4px)}
   .pave h3{color:#fff;font-size:1.16rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;cursor:pointer;line-height:1.25}
   .pave h3:hover{text-decoration:underline}
-  .pave .subhint{display:block;font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;margin-bottom:8px}
   .pave a.pl{display:block;color:rgba(255,255,255,.96);font-size:.9rem;padding:8px 0 8px 16px;position:relative;border-top:1px solid rgba(255,255,255,.28);cursor:pointer;transition:padding .15s}
   .pave a.pl::before{content:"›";position:absolute;left:2px;top:8px;font-weight:700;opacity:.85}
   .pave a.pl:hover{padding-left:21px;color:#fff}
@@ -283,7 +282,6 @@
       <div class="paves">
         <div class="pave c1">
           <h3 onclick="go('domaines')"><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3>
-          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></a>
@@ -291,28 +289,24 @@
         </div>
         <div class="pave c2">
           <h3 onclick="go('domaines')"><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3>
-          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></a>
         </div>
         <div class="pave c3">
           <h3 onclick="go('domaines')"><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3>
-          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Manipulations et pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></a>
         </div>
         <div class="pave c4">
           <h3 onclick="go('domaines')"><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3>
-          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults</span></a>
         </div>
         <div class="pave c5">
           <h3 onclick="go('domaines')"><span class="lang-fr">Expatriation dans le monde</span><span class="lang-en">Expatriation worldwide</span></h3>
-          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Projet et accompagnement</span><span class="lang-en">Project &amp; support</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></a>
