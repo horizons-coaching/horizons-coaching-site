@@ -9,6 +9,61 @@ media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
+  - name: "pages"
+    label: "Pages du site"
+    files:
+      - name: "accueil"
+        label: "Page d'accueil"
+        file: "src/_data/accueil.json"
+        description: "Modifiez ici les textes de la page d'accueil. Chaque champ existe en français (_fr) et en anglais (_en)."
+        fields:
+          - label: "Accroche — bandeau (FR)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Sur-titre (FR)", name: "eyebrow_fr", widget: "string" }
+              - { label: "Sur-titre (EN)", name: "eyebrow_en", widget: "string" }
+              - { label: "Accroche (FR)", name: "accroche_fr", widget: "text" }
+              - { label: "Accroche (EN)", name: "accroche_en", widget: "text" }
+              - { label: "Visio / présentiel (FR)", name: "visio_fr", widget: "text" }
+              - { label: "Visio / présentiel (EN)", name: "visio_en", widget: "text" }
+          - label: "Formule"
+            name: "formule"
+            widget: "object"
+            fields:
+              - { label: "Introduction (FR)", name: "intro_fr", widget: "text" }
+              - { label: "Introduction (EN)", name: "intro_en", widget: "text" }
+          - label: "Domaines"
+            name: "domaines"
+            widget: "object"
+            fields:
+              - { label: "Introduction (FR)", name: "intro_fr", widget: "text" }
+              - { label: "Introduction (EN)", name: "intro_en", widget: "text" }
+          - label: "Conseillères"
+            name: "conseilleres"
+            widget: "object"
+            fields:
+              - { label: "Introduction (FR)", name: "intro_fr", widget: "text" }
+              - { label: "Introduction (EN)", name: "intro_en", widget: "text" }
+              - { label: "Choisir — expatriation (FR)", name: "choisir_fr", widget: "text" }
+              - { label: "Choisir — expatriation (EN)", name: "choisir_en", widget: "text" }
+          - label: "Biographies"
+            name: "bios"
+            widget: "object"
+            fields:
+              - { label: "Isabelle (FR)", name: "isabelle_fr", widget: "text" }
+              - { label: "Isabelle (EN)", name: "isabelle_en", widget: "text" }
+              - { label: "Pearl (FR)", name: "pearl_fr", widget: "text" }
+              - { label: "Pearl (EN)", name: "pearl_en", widget: "text" }
+          - label: "Tarif"
+            name: "tarif"
+            widget: "object"
+            fields:
+              - { label: "Introduction (FR)", name: "intro_fr", widget: "text" }
+              - { label: "Introduction (EN)", name: "intro_en", widget: "text" }
+              - { label: "Prix", name: "prix", widget: "string" }
+              - { label: "Conclusion (FR)", name: "closing_fr", widget: "string" }
+              - { label: "Conclusion (EN)", name: "closing_en", widget: "string" }
   - name: "blog"
     label: "Articles du blog"
     label_singular: "Article"
