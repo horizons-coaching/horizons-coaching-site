@@ -19,6 +19,48 @@ collections:
         fields:
           - { label: "Logo (facultatif)", name: "logo", widget: "image", required: false }
 
+  - name: "apparence"
+    label: "Apparence du site"
+    files:
+      - name: "apparence"
+        label: "Couleurs, polices & boutons"
+        file: "src/_data/apparence.json"
+        description: "Ajustez l'ambiance du site dans des limites qui préservent son harmonie. Les changements s'appliquent à toutes les pages."
+        fields:
+          - label: "Couleur principale (bandeau & boutons)"
+            name: "couleur"
+            widget: "select"
+            default: "marron"
+            options:
+              - { label: "Marron orangé (actuel)", value: "marron" }
+              - { label: "Terracotta", value: "terracotta" }
+              - { label: "Beige doré", value: "beige" }
+              - { label: "Prune douce", value: "prune" }
+          - label: "Taille des boutons"
+            name: "taille_boutons"
+            widget: "select"
+            default: "moyen"
+            options:
+              - { label: "Petit", value: "petit" }
+              - { label: "Moyen (actuel)", value: "moyen" }
+              - { label: "Grand", value: "grand" }
+          - label: "Police des titres"
+            name: "police_titres"
+            widget: "select"
+            default: "cormorant"
+            options:
+              - { label: "Cormorant (élégante, actuelle)", value: "cormorant" }
+              - { label: "Playfair Display (chic)", value: "playfair" }
+              - { label: "Libre Baskerville (classique)", value: "libre" }
+          - label: "Police du texte"
+            name: "police_texte"
+            widget: "select"
+            default: "inter"
+            options:
+              - { label: "Inter (moderne, actuelle)", value: "inter" }
+              - { label: "Lato (douce)", value: "lato" }
+              - { label: "Nunito Sans (arrondie)", value: "nunito" }
+
   - name: "accueil"
     label: "Page d'accueil"
     files:
