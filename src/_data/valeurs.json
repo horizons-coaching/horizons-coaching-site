@@ -1,0 +1,26 @@
+{
+  "kicker_fr": "Qui nous sommes au fond",
+  "kicker_en": "Who we truly are",
+  "h2_fr": "Nos valeurs & nos buts",
+  "h2_en": "Our values & goals",
+  "cartes": [
+    {
+      "titre_fr": "Nos valeurs",
+      "titre_en": "Our values",
+      "texte_fr": "Écoute, respect, exigence et confidentialité. Un accompagnement profondément humain, loin des recettes toutes faites.",
+      "texte_en": "Listening, respect, rigour and confidentiality. Deeply human support, far from ready-made recipes."
+    },
+    {
+      "titre_fr": "Notre vision du coaching de vie amoureuse",
+      "titre_en": "Our vision of love-life coaching",
+      "texte_fr": "Accompagner chacun dans ses relations affectives, avec justesse et sans jugement.",
+      "texte_en": "Supporting each person in their emotional relationships, with care and without judgement."
+    },
+    {
+      "titre_fr": "Notre vision du coaching parental",
+      "titre_en": "Our vision of parenting coaching",
+      "texte_fr": "Soutenir les parents dans leur rôle, dans le respect de l'enfant et de la famille.",
+      "texte_en": "Supporting parents in their role, with respect for the child and the family."
+    }
+  ]
+}
