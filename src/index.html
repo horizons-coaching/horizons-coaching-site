@@ -20,13 +20,15 @@
     --teal-soft:#e7f0f2; --sand:#c98f5e; --sand-soft:#f3e7d8;
     --cream:#f8f5f0; --white:#fff; --line:#e7ded1;
     --shadow:0 10px 40px rgba(15,59,71,.08); --radius:14px;
+    /* En-tête marron orangé (couleur des boutons rendez-vous) + fonds chauds */
+    --brandbar:#b26a34; --brandbar2:#9c5a2a; --warm:#f6efe3; --warm2:#f2e7d6;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;color:var(--deep)}
   h1{font-size:clamp(2.4rem,5.5vw,4rem);letter-spacing:.5px}
-  h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:.5em}
+  h2{font-size:clamp(2.1rem,4.2vw,3.1rem);margin-bottom:.5em;font-weight:700}
   h3{font-size:1.4rem;margin-bottom:.35em}
   h4{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--teal);margin-bottom:.3em}
   p{margin-bottom:1rem;color:#3a4750}
@@ -37,40 +39,42 @@
   body.en .lang-en{display:inline}
   body.en h1 .lang-en,body.en h2 .lang-en,body.en h3 .lang-en,body.en h4 .lang-en{display:inline}
 
-  header{position:sticky;top:0;z-index:50;background:rgba(248,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:72px;gap:10px}
-  header .wrap{max-width:1240px}
-  .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:var(--deep);letter-spacing:.5px;display:flex;align-items:center;gap:9px;cursor:pointer;white-space:nowrap}
-  .brand .mark{width:42px;height:28px;flex:none}
+  header{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--brandbar),var(--brandbar2));box-shadow:0 2px 14px rgba(0,0,0,.14)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:92px;gap:10px}
+  header .wrap{max-width:1340px}
+  .brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.4rem;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:11px;cursor:pointer;white-space:nowrap}
+  .brand .mark{width:54px;height:36px;flex:none}
   .herologo{margin:0 auto 4px}
   .herologo svg{width:clamp(150px,26vw,190px);height:auto}
-  .brand b{color:var(--sand)}
-  .brandtxt{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:.92rem;letter-spacing:.5px;color:var(--deep);white-space:nowrap}
-  .brandtxt .dot{color:var(--sand)}
-  @media(max-width:430px){.brandtxt{font-size:.8rem;letter-spacing:.3px}}
+  .brand b{color:#ffe6cf}
+  .brandtxt{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:1.02rem;letter-spacing:.5px;color:#fff;white-space:nowrap}
+  .brandtxt .dot{color:#ffe0c2}
+  @media(max-width:520px){.brandtxt{font-size:.92rem;letter-spacing:.3px}}
   nav.main{display:flex;gap:2px;align-items:center;flex-wrap:wrap}
-  nav.main a{color:var(--ink);font-size:.74rem;font-weight:500;padding:7px 7px;border-radius:8px;cursor:pointer;white-space:nowrap}
-  nav.main a:hover{background:var(--teal-soft);color:var(--deep)}
-  nav.main a.active{color:var(--teal)}
+  nav.main a{color:#fff;font-size:.92rem;font-weight:600;padding:8px 9px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  nav.main a:hover{background:rgba(255,255,255,.18);color:#fff}
+  nav.main a.active{background:rgba(255,255,255,.24);color:#fff}
   .tools{display:flex;align-items:center;gap:10px}
-  .langtoggle{display:flex;border:1px solid var(--line);border-radius:20px;overflow:hidden;font-size:.7rem;font-weight:600}
-  .langtoggle button{border:none;background:transparent;padding:6px 10px;cursor:pointer;color:var(--muted)}
-  .langtoggle button.on{background:var(--deep);color:#fff}
-  .btn{display:inline-block;background:var(--sand);color:#fff;padding:11px 22px;border-radius:30px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 18px rgba(201,143,94,.35)}
+  .langtoggle{display:flex;border:1px solid rgba(255,255,255,.6);border-radius:20px;overflow:hidden;font-size:.74rem;font-weight:700}
+  .langtoggle button{border:none;background:transparent;padding:6px 11px;cursor:pointer;color:#fff}
+  .langtoggle button.on{background:#fff;color:var(--brandbar2)}
+  .btn{display:inline-block;background:var(--sand);color:#fff;padding:11px 22px;border-radius:30px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;white-space:nowrap;transition:transform .15s,box-shadow .15s;box-shadow:0 6px 18px rgba(201,143,94,.35)}
   .btn:hover{transform:translateY(-2px);color:#fff}
   .btn.ghost{background:transparent;color:var(--deep);border:1.5px solid var(--deep);box-shadow:none}
   .btn.ghost:hover{background:var(--deep);color:#fff}
   .btn.small{padding:9px 16px;font-size:.78rem}
-  .hamburger{display:none;background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--deep)}
+  .btn.header-cta{background:#fff;color:var(--brandbar2);box-shadow:0 4px 14px rgba(0,0,0,.18);font-weight:700}
+  .btn.header-cta:hover{background:#fff2e6;color:var(--brandbar2)}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;font-size:1.6rem;color:#fff}
 
   .page{display:none;animation:fade .4s ease}
   .page.active{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  .hero{position:relative;padding:80px 0 88px;text-align:center;overflow:hidden;background:linear-gradient(180deg,#f8f5f0 0%,#eef4f4 55%,#e3eef0 100%)}
-  .hero .horizon{position:absolute;left:0;right:0;bottom:130px;height:1px;background:linear-gradient(90deg,transparent,rgba(44,122,140,.4),transparent)}
-  .hero .sun{position:absolute;left:50%;bottom:130px;transform:translate(-50%,50%);width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(201,143,94,.22),rgba(201,143,94,0) 70%)}
-  .hero .eyebrow{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:16px}
+  .hero{position:relative;padding:74px 0 84px;text-align:center;overflow:hidden;background:linear-gradient(180deg,#fbf6ee 0%,#f7ecdb 60%,#f3e4cf 100%)}
+  .hero .horizon{position:absolute;left:0;right:0;bottom:130px;height:1px;background:linear-gradient(90deg,transparent,rgba(178,106,52,.45),transparent)}
+  .hero .sun{position:absolute;left:50%;bottom:130px;transform:translate(-50%,50%);width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(201,143,94,.26),rgba(201,143,94,0) 70%)}
+  .hero .eyebrow{font-size:.85rem;letter-spacing:3px;text-transform:uppercase;color:var(--brandbar);font-weight:700;margin-bottom:16px}
   .hero .dn{display:inline-block;margin-top:14px;font-size:clamp(1.3rem,4vw,1.9rem);letter-spacing:2px;color:var(--deep);font-weight:700;font-family:'Cormorant Garamond',Georgia,serif;border:1px solid var(--teal-soft);background:#fff;padding:8px 22px;border-radius:24px}
   .hero p.lead{font-size:1.15rem;max-width:640px;margin:20px auto 30px;color:#41525b}
   .hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -78,7 +82,8 @@
   .loc b{color:var(--teal)}
 
   section.block{padding:66px 0}
-  section.block.alt{background:var(--white)}
+  section.block.alt{background:var(--warm)}
+  section.block.alt2{background:var(--warm2)}
   .center{text-align:center;max-width:720px;margin:0 auto 44px}
   .kicker{font-size:.76rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:12px}
   .note{background:var(--sand-soft);border-left:3px solid var(--sand);border-radius:8px;padding:6px 14px;font-size:.76rem;color:#8a6b47;display:inline-block;margin-bottom:18px;font-weight:500}
@@ -87,7 +92,7 @@
   .g3{grid-template-columns:repeat(3,1fr)}
   .g2{grid-template-columns:repeat(2,1fr)}
   .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s}
-  section.block.alt .card{background:var(--cream)}
+  section.block.alt .card,section.block.alt2 .card{background:var(--white)}
   .card:hover{transform:translateY(-4px)}
   .card p{font-size:.94rem;margin-bottom:0}
   .ic{width:44px;height:44px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--teal);font-size:1.2rem}
@@ -105,10 +110,12 @@
   .paves{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
   .pave{border-radius:var(--radius);padding:22px 18px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
   .pave:hover{transform:translateY(-4px)}
-  .pave h3{color:#fff;font-size:1.12rem;margin-bottom:12px;cursor:pointer;line-height:1.2}
+  .pave h3{color:#fff;font-size:1.16rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;cursor:pointer;line-height:1.25}
   .pave h3:hover{text-decoration:underline}
-  .pave a.pl{display:block;color:rgba(255,255,255,.94);font-size:.82rem;padding:7px 0;border-top:1px solid rgba(255,255,255,.24);cursor:pointer;transition:padding .15s}
-  .pave a.pl:hover{padding-left:5px;color:#fff}
+  .pave .subhint{display:block;font-size:.66rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;margin-bottom:8px}
+  .pave a.pl{display:block;color:rgba(255,255,255,.96);font-size:.9rem;padding:8px 0 8px 16px;position:relative;border-top:1px solid rgba(255,255,255,.28);cursor:pointer;transition:padding .15s}
+  .pave a.pl::before{content:"›";position:absolute;left:2px;top:8px;font-weight:700;opacity:.85}
+  .pave a.pl:hover{padding-left:21px;color:#fff}
   .pave.c1{background:linear-gradient(160deg,#c9736f,#a04b48)}
   .pave.c2{background:linear-gradient(160deg,#6fa07d,#4a7d59)}
   .pave.c3{background:linear-gradient(160deg,#7b74a6,#565081)}
@@ -172,13 +179,21 @@
   .leg em{color:var(--teal);font-style:normal;font-weight:600}
 
   @media(max-width:960px){
-    nav.main{position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:12px;gap:2px;border-bottom:1px solid var(--line);display:none;box-shadow:var(--shadow)}
+    nav.main{position:fixed;top:92px;left:0;right:0;background:linear-gradient(90deg,var(--brandbar),var(--brandbar2));flex-direction:column;padding:12px;gap:2px;display:none;box-shadow:0 10px 24px rgba(0,0,0,.2)}
     nav.main.open{display:flex}
-    nav.main a{padding:12px}
+    nav.main a{padding:13px;font-size:1.02rem}
     .hamburger{display:block}
-    .header-cta{display:none}
+    .header-cta{display:inline-block;padding:8px 13px;font-size:.74rem}
     .g3,.persons,.g2{grid-template-columns:1fr}
     footer .fgrid{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    .bar{height:76px;gap:6px}
+    nav.main{top:76px}
+    .brandtxt{display:none}
+    .brand .mark{width:48px;height:31px}
+    .tools{gap:7px}
+    .header-cta{padding:8px 13px;font-size:.74rem}
   }
 </style>
 </head>
@@ -188,8 +203,8 @@
   <div class="wrap bar">
     <div class="brand" onclick="go('accueil')">
       <svg class="mark" viewBox="0 0 64 40" fill="none">
-        <circle cx="32" cy="17" r="10" fill="#c98f5e" opacity=".28"/>
-        <g stroke="#0f3b47" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <circle cx="32" cy="17" r="10" fill="#ffffff" opacity=".22"/>
+        <g stroke="#ffffff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
           <line x1="8" y1="29" x2="56" y2="29"/>
           <path d="M8,29 C15,29 17,16 23,14 C29,16 30,20 32,20 C34,20 35,16 41,14 C47,16 49,29 56,29"/>
           <line x1="22" y1="29" x2="22" y2="13"/><line x1="24" y1="29" x2="24" y2="13"/>
@@ -223,23 +238,7 @@
   <div class="hero">
     <div class="sun"></div><div class="horizon"></div>
     <div class="wrap">
-      <div class="herologo">
-        <svg viewBox="0 0 300 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><radialGradient id="hsun" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e7b98a"/><stop offset="55%" stop-color="#d8a46c" stop-opacity=".5"/><stop offset="100%" stop-color="#d8a46c" stop-opacity="0"/></radialGradient>
-          <linearGradient id="hhz" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0f3b47" stop-opacity="0"/><stop offset="20%" stop-color="#0f3b47"/><stop offset="80%" stop-color="#0f3b47"/><stop offset="100%" stop-color="#0f3b47" stop-opacity="0"/></linearGradient></defs>
-          <circle cx="150" cy="70" r="42" fill="url(#hsun)"/>
-          <g fill="none" stroke="#0f3b47" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="42" y1="104" x2="258" y2="104"/>
-            <path d="M42,104 C74,104 84,62 110,56 C132,61 140,74 150,74 C160,74 168,61 190,56 C216,62 226,104 258,104"/>
-            <path d="M99,104 L99,54 M121,104 L121,54"/><path d="M95,54 L125,54" stroke-width="3"/><path d="M104,54 Q110,44 116,54" stroke-width="1.8"/>
-            <path d="M179,104 L179,54 M201,104 L201,54"/><path d="M175,54 L205,54" stroke-width="3"/><path d="M184,54 Q190,44 196,54" stroke-width="1.8"/>
-            <g stroke-width="1.2" opacity=".8"><line x1="66" y1="87" x2="66" y2="104"/><line x1="82" y1="72" x2="82" y2="104"/><line x1="136" y1="70" x2="136" y2="104"/><line x1="150" y1="74" x2="150" y2="104"/><line x1="164" y1="70" x2="164" y2="104"/><line x1="218" y1="72" x2="218" y2="104"/><line x1="234" y1="87" x2="234" y2="104"/></g>
-          </g>
-          <line x1="24" y1="116" x2="276" y2="116" stroke="url(#hhz)" stroke-width="2.2" stroke-linecap="round"/>
-        </svg>
-      </div>
       <div class="eyebrow"><span class="lang-fr">{{ accueil.hero.eyebrow_fr }}</span><span class="lang-en">{{ accueil.hero.eyebrow_en }}</span></div>
-      <span class="dn">HORIZONS‑COACHING.COM</span>
       <p class="lead">
         <span class="lang-fr">{{ accueil.hero.visio_fr }}</span>
         <span class="lang-en">{{ accueil.hero.visio_en }}</span>
@@ -249,12 +248,8 @@
         <span class="lang-en">{{ accueil.hero.accroche_en }}</span>
       </p>
       <div class="cta-row">
-        <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous</span><span class="lang-en">Book a session</span></button>
+        <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
         <button class="btn ghost" onclick="go('domaines')"><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></button>
-      </div>
-      <div class="loc">
-        <span class="lang-fr">📍 <b>Budapest</b> &nbsp;·&nbsp; 💻 <b>En ligne</b> dans le monde entier &nbsp;·&nbsp; 🇫🇷 Français &nbsp; 🇬🇧 English</span>
-        <span class="lang-en">📍 <b>Budapest</b> &nbsp;·&nbsp; 💻 <b>Online</b> worldwide &nbsp;·&nbsp; 🇫🇷 Français &nbsp; 🇬🇧 English</span>
       </div>
     </div>
   </div>
@@ -288,6 +283,7 @@
       <div class="paves">
         <div class="pave c1">
           <h3 onclick="go('domaines')"><span class="lang-fr">Vie amoureuse</span><span class="lang-en">Love life</span></h3>
+          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Recherche de partenaire de vie</span><span class="lang-en">Finding a life partner</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Vie conjugale</span><span class="lang-en">Married life</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de couple</span><span class="lang-en">Couple difficulties</span></a>
@@ -295,24 +291,28 @@
         </div>
         <div class="pave c2">
           <h3 onclick="go('domaines')"><span class="lang-fr">Parentalité</span><span class="lang-en">Parenting</span></h3>
+          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Développement et éducation de l'enfant</span><span class="lang-en">Child development &amp; education</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Enfants et adolescents HPI</span><span class="lang-en">Gifted children &amp; teens</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Protection de l'enfant</span><span class="lang-en">Child protection</span></a>
         </div>
         <div class="pave c3">
           <h3 onclick="go('domaines')"><span class="lang-fr">Situations de vie difficiles</span><span class="lang-en">Difficult life situations</span></h3>
+          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Épreuves de vie</span><span class="lang-en">Life ordeals</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Violences conjugales</span><span class="lang-en">Domestic violence</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Manipulations et pervers narcissiques</span><span class="lang-en">Manipulation &amp; narcissistic abuse</span></a>
         </div>
         <div class="pave c4">
           <h3 onclick="go('domaines')"><span class="lang-fr">Épanouissement personnel</span><span class="lang-en">Personal fulfilment</span></h3>
+          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Amélioration de vie</span><span class="lang-en">Improving your life</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Évolution et changement de vie</span><span class="lang-en">Life evolution &amp; change</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécifique Personnes HPI</span><span class="lang-en">Support for gifted adults</span></a>
         </div>
         <div class="pave c5">
           <h3 onclick="go('domaines')"><span class="lang-fr">Expatriation dans le monde</span><span class="lang-en">Expatriation worldwide</span></h3>
+          <span class="subhint"><span class="lang-fr">Sous-catégories</span><span class="lang-en">Sub-categories</span></span>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Projet et accompagnement</span><span class="lang-en">Project &amp; support</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Difficultés de vie en expatriation</span><span class="lang-en">Life difficulties abroad</span></a>
           <a class="pl" onclick="go('domaines')"><span class="lang-fr">Accompagnement spécial Budapest</span><span class="lang-en">Special Budapest support</span></a>
@@ -329,12 +329,13 @@
       <p><span class="lang-fr">{{ accueil.conseilleres.intro_fr }}</span><span class="lang-en">{{ accueil.conseilleres.intro_en }}</span></p>
     </div>
     <div class="wrap persons">
-      <div class="person"><div class="avatar">I</div><h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
-      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
+      <div class="person"><div class="avatar">I</div><h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
+      <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
     </div>
-    <div class="center" style="margin-top:24px">
-      <p><span class="lang-fr">{{ accueil.conseilleres.choisir_fr }} <b>À vous de choisir !</b></span><span class="lang-en">{{ accueil.conseilleres.choisir_en }} <b>The choice is yours!</b></span></p>
-      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous !</span><span class="lang-en">Book a session!</span></button>
+    <div class="center" style="margin-top:28px">
+      <p><span class="lang-fr">{{ accueil.conseilleres.choisir_fr }}</span><span class="lang-en">{{ accueil.conseilleres.choisir_en }}</span></p>
+      <p class="serif" style="font-size:1.5rem;font-weight:700;color:var(--deep);margin:6px 0 16px"><span class="lang-fr">À vous de choisir !</span><span class="lang-en">The choice is yours!</span></p>
+      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
     </div>
   </section>
 
@@ -346,17 +347,11 @@
       <p><span class="lang-fr">{{ accueil.tarif.intro_fr }}</span><span class="lang-en">{{ accueil.tarif.intro_en }}</span></p>
       <div class="serif" style="font-size:2.7rem;color:var(--deep);font-weight:700;margin:8px 0">{{ accueil.tarif.prix }}</div>
       <p><span class="lang-fr">{{ accueil.tarif.closing_fr }}</span><span class="lang-en">{{ accueil.tarif.closing_en }}</span></p>
-      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous !</span><span class="lang-en">Book with us!</span></button>
+      <p class="serif" style="font-size:1.75rem;font-weight:700;color:var(--brandbar);line-height:1.25;margin:6px 0 18px"><span class="lang-fr">C'est pour vous le moment d'aller vers de nouveaux horizons !</span><span class="lang-en">Now is your moment to move toward new horizons!</span></p>
+      <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
     </div>
   </section>
 
-  <div class="cta-band">
-    <div class="wrap">
-      <h2><span class="lang-fr">Prêt·e à ouvrir un nouvel horizon ?</span><span class="lang-en">Ready to open a new horizon?</span></h2>
-      <p><span class="lang-fr">Réservez un premier échange, en présentiel à Budapest ou en visioconférence.</span><span class="lang-en">Book a first conversation, in person in Budapest or by video call.</span></p>
-      <br><button class="btn" onclick="go('infos')"><span class="lang-fr">Prendre rendez-vous</span><span class="lang-en">Book a session</span></button>
-    </div>
-  </div>
 </div>
 
 <!-- VALEURS -->
@@ -364,8 +359,7 @@
   <section class="block">
     <div class="center">
       <div class="kicker"><span class="lang-fr">Qui nous sommes au fond</span><span class="lang-en">Who we truly are</span></div>
-      <h2><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></h2>
-    </div>
+      <h2><span class="lang-fr">Nos valeurs &amp; nos buts</span><span class="lang-en">Our values &amp; goals</span></h2>    </div>
     <div class="grid g3">
       <div class="card"><h4><span class="lang-fr">Nos valeurs</span><span class="lang-en">Our values</span></h4><p><span class="lang-fr">Écoute, respect, exigence et confidentialité. Un accompagnement profondément humain, loin des recettes toutes faites.</span><span class="lang-en">Listening, respect, rigour and confidentiality. Deeply human support, far from ready-made recipes.</span></p></div>
       <div class="card"><h4><span class="lang-fr">Notre vision du coaching de vie amoureuse</span><span class="lang-en">Our vision of love-life coaching</span></h4><p><span class="lang-fr">Accompagner chacun dans ses relations affectives, avec justesse et sans jugement.</span><span class="lang-en">Supporting each person in their emotional relationships, with care and without judgement.</span></p></div>
@@ -379,8 +373,7 @@
   <section class="block">
     <div class="center">
       <div class="kicker"><span class="lang-fr">Le cœur de notre accompagnement</span><span class="lang-en">The heart of our work</span></div>
-      <h2><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></h2>
-    </div>
+      <h2><span class="lang-fr">Domaines d'intervention</span><span class="lang-en">Areas of support</span></h2>    </div>
     <div class="wrap" style="max-width:920px">
 
       <div class="theme">
@@ -441,8 +434,7 @@
   <section class="block">
     <div class="center">
       <div class="kicker"><span class="lang-fr">Comment nous travaillons</span><span class="lang-en">How we work</span></div>
-      <h2><span class="lang-fr">Nos méthodes d'accompagnement</span><span class="lang-en">Our support methods</span></h2>
-    </div>
+      <h2><span class="lang-fr">Nos méthodes d'accompagnement</span><span class="lang-en">Our support methods</span></h2>    </div>
     <div class="grid g2">
       <div class="card"><h4><span class="lang-fr">Conseil et coaching</span><span class="lang-en">Advice &amp; coaching</span></h4><p><span class="lang-fr">Une approche qui allie l'écoute du coaching et, lorsque c'est utile, des repères et conseils concrets.</span><span class="lang-en">An approach that combines coaching's listening with, where useful, concrete guidance and advice.</span></p></div>
       <div class="card"><h4><span class="lang-fr">Le coaching à la française</span><span class="lang-en">Coaching the French way</span></h4><p><span class="lang-fr">Un accompagnement individuel et sur mesure, à rebours du coaching de masse « à l'américaine ».</span><span class="lang-en">Individual, tailor-made support — the opposite of American-style mass coaching.</span></p></div>
@@ -455,8 +447,7 @@
   <section class="block">
     <div class="center">
       <div class="kicker"><span class="lang-fr">Qui sommes-nous</span><span class="lang-en">Who we are</span></div>
-      <h2><span class="lang-fr">À propos de nous</span><span class="lang-en">About us</span></h2>
-    </div>
+      <h2><span class="lang-fr">À propos de nous</span><span class="lang-en">About us</span></h2>    </div>
     <div class="wrap persons">
       <div class="person"><div class="avatar">P</div><h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach</span><span class="lang-en">Coach</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
       <div class="person"><div class="avatar">I</div><h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">Coach &amp; accompagnement</span><span class="lang-en">Coach &amp; support</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
@@ -702,4 +693,4 @@
   }
 </script>
 </body>
-  </html>
+</html>
