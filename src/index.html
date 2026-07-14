@@ -138,7 +138,7 @@
   .sub .docs{color:var(--sand);font-size:.76rem;margin-left:6px}
 
   /* 5 pavés colorés (page d'accueil) */
-  .paves{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .paves{display:grid;grid-template-columns:repeat(var(--pcount,5),1fr);gap:16px}
   .pave{border-radius:var(--radius);padding:22px 18px;color:#fff;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s}
   .pave:hover{transform:translateY(-4px)}
   .pave h3{color:#fff;font-size:1.16rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;cursor:pointer;line-height:1.25}
@@ -320,7 +320,7 @@
       <p><span class="lang-fr">{{ accueil.domaines.intro_fr }}</span><span class="lang-en">{{ accueil.domaines.intro_en }}</span></p>
     </div>
     <div class="wrap">
-      <div class="paves">
+      <div class="paves" style="--pcount:{{ domaines.categories | length }}">
         {% for cat in domaines.categories %}
         <div class="pave c{{ (loop.index0 % 8) + 1 }}">
           <h3 onclick="go('domaines')"><span class="lang-fr">{{ cat.titre_fr }}</span><span class="lang-en">{{ cat.titre_en }}</span></h3>
