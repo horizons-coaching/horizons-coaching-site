@@ -67,17 +67,17 @@ collections:
       - name: "accueil"
         label: "Page d'accueil"
         file: "src/_data/accueil.json"
-        description: "Modifiez ici les textes de la page d'accueil. Chaque champ existe en français (_fr) et en anglais (_en)."
+        description: "Modifiez ici les textes de la page d'accueil. Chaque texte a deux champs : un « (FR) » en français et un « (EN) » en anglais. Pour qu'un changement apparaisse dans les deux langues, pensez à modifier les deux champs — c'est normal de devoir le faire une fois pour chaque langue."
         fields:
-          - label: "Accroche — bandeau (FR)"
+          - label: "Bandeau d'accueil (haut de page)"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Sur-titre (FR)", name: "eyebrow_fr", widget: "string" }
+              - { label: "Sur-titre (FR)", name: "eyebrow_fr", widget: "string", hint: "Pensez à modifier aussi « Sur-titre (EN) » pour la version anglaise." }
               - { label: "Sur-titre (EN)", name: "eyebrow_en", widget: "string" }
-              - { label: "Accroche (FR)", name: "accroche_fr", widget: "text" }
+              - { label: "Accroche (FR)", name: "accroche_fr", widget: "text", hint: "Pensez à modifier aussi « Accroche (EN) » juste en dessous pour la version anglaise. Le point d'exclamation fait partie du texte : vous pouvez le garder ou le retirer." }
               - { label: "Accroche (EN)", name: "accroche_en", widget: "text" }
-              - { label: "Visio / présentiel (FR)", name: "visio_fr", widget: "text" }
+              - { label: "Visio / présentiel (FR)", name: "visio_fr", widget: "text", hint: "Ici vous modifiez le texte ; la mise en page de cette ligne est gérée par le modèle. Pensez aussi à « Visio / présentiel (EN) »." }
               - { label: "Visio / présentiel (EN)", name: "visio_en", widget: "text" }
               - { label: "Photo d'accueil (facultatif)", name: "photo", widget: "image", required: false }
           - label: "Formule"
