@@ -7,6 +7,38 @@
   "intro_en": "",
   "categories": [
     {
+      "titre_fr": "Haut potentiel intellectuel (HPI)",
+      "titre_en": "Giftedness (HPI)",
+      "sous": [
+        {
+          "fr": "Enfants et adolescents HPI",
+          "en": "Gifted children & teens (HPI)"
+        },
+        {
+          "fr": "Accompagnement spécifique Personnes HPI",
+          "en": "Support for gifted adults (HPI)"
+        }
+      ]
+    },
+    {
+      "titre_fr": "Expatriation dans le monde",
+      "titre_en": "Expatriation worldwide",
+      "sous": [
+        {
+          "fr": "Projet et accompagnement",
+          "en": "Project & support"
+        },
+        {
+          "fr": "Difficultés de vie en expatriation",
+          "en": "Life difficulties abroad"
+        },
+        {
+          "fr": "Accompagnement spécial Budapest",
+          "en": "Special Budapest support"
+        }
+      ]
+    },
+    {
       "titre_fr": "Vie amoureuse",
       "titre_en": "Love life",
       "sous": [
@@ -35,10 +67,6 @@
         {
           "fr": "Développement et éducation de l'enfant",
           "en": "Child development & education"
-        },
-        {
-          "fr": "Enfants et adolescents HPI",
-          "en": "Gifted children & teens (HPI)"
         },
         {
           "fr": "Protection de l'enfant",
@@ -75,28 +103,6 @@
         {
           "fr": "Évolution et changement de vie",
           "en": "Life evolution & change"
-        },
-        {
-          "fr": "Accompagnement spécifique Personnes HPI",
-          "en": "Support for gifted adults (HPI)"
-        }
-      ]
-    },
-    {
-      "titre_fr": "Expatriation dans le monde",
-      "titre_en": "Expatriation worldwide",
-      "sous": [
-        {
-          "fr": "Projet et accompagnement",
-          "en": "Project & support"
-        },
-        {
-          "fr": "Difficultés de vie en expatriation",
-          "en": "Life difficulties abroad"
-        },
-        {
-          "fr": "Accompagnement spécial Budapest",
-          "en": "Special Budapest support"
         }
       ]
     }
