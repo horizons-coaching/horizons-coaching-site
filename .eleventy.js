@@ -16,6 +16,11 @@ module.exports = function(eleventyConfig) {
     catch(e){ return ""; }
   });
 
+  // Line breaks entered in the CMS become real <br> (each line trimmed)
+  eleventyConfig.addFilter("nl2br", (s) =>
+    String(s || "").split("\n").map((l) => l.trim()).filter((l) => l.length).join("<br>")
+  );
+
   return {
     dir: { input: "src", includes: "_includes", output: "_site" },
     markdownTemplateEngine: "njk",
