@@ -277,8 +277,8 @@
     <div class="wrap">
       <div class="eyebrow"><span class="lang-fr">{{ accueil.hero.eyebrow_fr }}</span><span class="lang-en">{{ accueil.hero.eyebrow_en }}</span></div>
       <p class="lead">
-        <span class="lang-fr">{{ accueil.hero.visio_fr }}</span>
-        <span class="lang-en">{{ accueil.hero.visio_en }}</span>
+        <span class="lang-fr">{{ accueil.hero.visio_fr | nl2br | safe }}</span>
+        <span class="lang-en">{{ accueil.hero.visio_en | nl2br | safe }}</span>
       </p>
       <p class="lead serif" style="font-size:1.55rem;color:var(--deep);font-weight:600;max-width:700px;margin-top:8px">
         <span class="lang-fr">{{ accueil.hero.accroche_fr }}</span>
