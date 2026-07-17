@@ -275,14 +275,14 @@
   <div class="hero">
     <div class="sun"></div><div class="horizon"></div>
     <div class="wrap">
-      <div class="eyebrow"><span class="lang-fr">{{ accueil.hero.eyebrow_fr }}</span><span class="lang-en">{{ accueil.hero.eyebrow_en }}</span></div>
+      <div class="eyebrow"><span class="lang-fr">{{ accueil.hero.eyebrow_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.hero.eyebrow_en | nl2br | safe }}</span></div>
       <p class="lead">
         <span class="lang-fr">{{ accueil.hero.visio_fr | nl2br | safe }}</span>
         <span class="lang-en">{{ accueil.hero.visio_en | nl2br | safe }}</span>
       </p>
       <p class="lead serif" style="font-size:1.55rem;color:var(--deep);font-weight:600;max-width:700px;margin-top:8px">
-        <span class="lang-fr">{{ accueil.hero.accroche_fr }}</span>
-        <span class="lang-en">{{ accueil.hero.accroche_en }}</span>
+        <span class="lang-fr">{{ accueil.hero.accroche_fr | nl2br | safe }}</span>
+        <span class="lang-en">{{ accueil.hero.accroche_en | nl2br | safe }}</span>
       </p>
       {% if accueil.hero.photo %}
       <div class="hero-photo"><img src="{{ accueil.hero.photo }}" alt="Horizons-Coaching"></div>
@@ -299,7 +299,7 @@
     <div class="center">
       <div class="kicker"><span class="lang-fr">Notre singularité</span><span class="lang-en">What sets us apart</span></div>
       <h2><span class="lang-fr">Une formule unique</span><span class="lang-en">A unique formula</span></h2>
-      <p><span class="lang-fr">{{ accueil.formule.intro_fr }}</span><span class="lang-en">{{ accueil.formule.intro_en }}</span></p>
+      <p><span class="lang-fr">{{ accueil.formule.intro_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.formule.intro_en | nl2br | safe }}</span></p>
     </div>
     <div class="wrap" style="max-width:760px">
       <ul class="check">
@@ -317,14 +317,14 @@
     <div class="center">
       <div class="kicker"><span class="lang-fr">Notre expertise</span><span class="lang-en">Our expertise</span></div>
       <h2><span class="lang-fr">Nos domaines d'intervention</span><span class="lang-en">Our areas of support</span></h2>
-      <p><span class="lang-fr">{{ accueil.domaines.intro_fr }}</span><span class="lang-en">{{ accueil.domaines.intro_en }}</span></p>
+      <p><span class="lang-fr">{{ accueil.domaines.intro_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.domaines.intro_en | nl2br | safe }}</span></p>
     </div>
     <div class="wrap">
       <div class="paves" style="--pcount:{{ domaines.categories | length }}">
         {% for cat in domaines.categories %}
         <div class="pave c{{ (loop.index0 % 8) + 1 }}">
-          <h3 onclick="go('domaines')"><span class="lang-fr">{{ cat.titre_fr }}</span><span class="lang-en">{{ cat.titre_en }}</span></h3>
-          {% for s in cat.sous %}<a class="pl" onclick="go('domaines')"><span class="lang-fr">{{ s.fr }}</span><span class="lang-en">{{ s.en }}</span></a>{% endfor %}
+          <h3 onclick="go('domaines')"><span class="lang-fr">{{ cat.titre_fr | nl2br | safe }}</span><span class="lang-en">{{ cat.titre_en | nl2br | safe }}</span></h3>
+          {% for s in cat.sous %}<a class="pl" onclick="go('domaines')"><span class="lang-fr">{{ s.fr | nl2br | safe }}</span><span class="lang-en">{{ s.en | nl2br | safe }}</span></a>{% endfor %}
         </div>
         {% endfor %}
       </div>
@@ -336,14 +336,14 @@
     <div class="center">
       <div class="kicker"><span class="lang-fr">Nos deux conseillères</span><span class="lang-en">Our two advisors</span></div>
       <h2><span class="lang-fr">Choisir votre conseillère</span><span class="lang-en">Choose your advisor</span></h2>
-      <p><span class="lang-fr">{{ accueil.conseilleres.intro_fr }}</span><span class="lang-en">{{ accueil.conseilleres.intro_en }}</span></p>
+      <p><span class="lang-fr">{{ accueil.conseilleres.intro_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.conseilleres.intro_en | nl2br | safe }}</span></p>
     </div>
     <div class="wrap persons">
-      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
-      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
+      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle</h3><p><span class="lang-fr">{{ accueil.bios.isabelle_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.bios.isabelle_en | nl2br | safe }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
+      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p><span class="lang-fr">{{ accueil.bios.pearl_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.bios.pearl_en | nl2br | safe }}</span></p><div style="margin-top:16px"><button class="btn ghost small" onclick="go('apropos')"><span class="lang-fr">En savoir plus</span><span class="lang-en">Learn more</span></button></div></div>
     </div>
     <div class="center" style="margin-top:28px">
-      <p><span class="lang-fr">{{ accueil.conseilleres.choisir_fr }}</span><span class="lang-en">{{ accueil.conseilleres.choisir_en }}</span></p>
+      <p><span class="lang-fr">{{ accueil.conseilleres.choisir_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.conseilleres.choisir_en | nl2br | safe }}</span></p>
       <p class="serif" style="font-size:1.5rem;font-weight:700;color:var(--deep);margin:6px 0 16px"><span class="lang-fr">À vous de choisir !</span><span class="lang-en">The choice is yours!</span></p>
       <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
     </div>
@@ -354,9 +354,9 @@
     <div class="center" style="max-width:640px">
       <div class="kicker"><span class="lang-fr">Nos séances &amp; notre tarif</span><span class="lang-en">Our sessions &amp; fee</span></div>
       <h2><span class="lang-fr">Simple et transparent</span><span class="lang-en">Simple and transparent</span></h2>
-      <p><span class="lang-fr">{{ accueil.tarif.intro_fr }}</span><span class="lang-en">{{ accueil.tarif.intro_en }}</span></p>
-      <div class="serif" style="font-size:2.7rem;color:var(--deep);font-weight:700;margin:8px 0">{{ accueil.tarif.prix }}</div>
-      <p><span class="lang-fr">{{ accueil.tarif.closing_fr }}</span><span class="lang-en">{{ accueil.tarif.closing_en }}</span></p>
+      <p><span class="lang-fr">{{ accueil.tarif.intro_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.tarif.intro_en | nl2br | safe }}</span></p>
+      <div class="serif" style="font-size:2.7rem;color:var(--deep);font-weight:700;margin:8px 0">{{ accueil.tarif.prix | nl2br | safe }}</div>
+      <p><span class="lang-fr">{{ accueil.tarif.closing_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.tarif.closing_en | nl2br | safe }}</span></p>
       <p class="serif" style="font-size:1.75rem;font-weight:700;color:var(--brandbar);line-height:1.25;margin:6px 0 18px"><span class="lang-fr">C'est pour vous le moment d'aller vers de nouveaux horizons !</span><span class="lang-en">Now is your moment to move toward new horizons!</span></p>
       <button class="btn" onclick="go('infos')"><span class="lang-fr">Prenez rendez-vous avec nous</span><span class="lang-en">Book with us</span></button>
     </div>
@@ -368,10 +368,10 @@
 <div class="page" id="valeurs">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">{{ valeurs.kicker_fr }}</span><span class="lang-en">{{ valeurs.kicker_en }}</span></div>
-      <h2><span class="lang-fr">{{ valeurs.h2_fr }}</span><span class="lang-en">{{ valeurs.h2_en }}</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ valeurs.kicker_fr | nl2br | safe }}</span><span class="lang-en">{{ valeurs.kicker_en | nl2br | safe }}</span></div>
+      <h2><span class="lang-fr">{{ valeurs.h2_fr | nl2br | safe }}</span><span class="lang-en">{{ valeurs.h2_en | nl2br | safe }}</span></h2>    </div>
     <div class="grid g3">
-      {% for c in valeurs.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr }}</span><span class="lang-en">{{ c.titre_en }}</span></h4><p><span class="lang-fr">{{ c.texte_fr }}</span><span class="lang-en">{{ c.texte_en }}</span></p></div>{% endfor %}
+      {% for c in valeurs.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr | nl2br | safe }}</span><span class="lang-en">{{ c.titre_en | nl2br | safe }}</span></h4><p><span class="lang-fr">{{ c.texte_fr | nl2br | safe }}</span><span class="lang-en">{{ c.texte_en | nl2br | safe }}</span></p></div>{% endfor %}
     </div>
   </section>
 </div>
@@ -380,15 +380,15 @@
 <div class="page" id="domaines">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">{{ domaines.kicker_fr }}</span><span class="lang-en">{{ domaines.kicker_en }}</span></div>
-      <h2><span class="lang-fr">{{ domaines.h2_fr }}</span><span class="lang-en">{{ domaines.h2_en }}</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ domaines.kicker_fr | nl2br | safe }}</span><span class="lang-en">{{ domaines.kicker_en | nl2br | safe }}</span></div>
+      <h2><span class="lang-fr">{{ domaines.h2_fr | nl2br | safe }}</span><span class="lang-en">{{ domaines.h2_en | nl2br | safe }}</span></h2>    </div>
     <div class="wrap" style="max-width:920px">
 
       {% for cat in domaines.categories %}
       <div class="theme">
-        <div class="thead"><div class="badge">{{ loop.index }}</div><h3><span class="lang-fr">{{ cat.titre_fr }}</span><span class="lang-en">{{ cat.titre_en }}</span></h3></div>
+        <div class="thead"><div class="badge">{{ loop.index }}</div><h3><span class="lang-fr">{{ cat.titre_fr | nl2br | safe }}</span><span class="lang-en">{{ cat.titre_en | nl2br | safe }}</span></h3></div>
         <div class="subs">
-          {% for s in cat.sous %}<span class="sub"><b><span class="lang-fr">{{ s.fr }}</span><span class="lang-en">{{ s.en }}</span></b></span>{% endfor %}
+          {% for s in cat.sous %}<span class="sub"><b><span class="lang-fr">{{ s.fr | nl2br | safe }}</span><span class="lang-en">{{ s.en | nl2br | safe }}</span></b></span>{% endfor %}
         </div>
       </div>
       {% endfor %}
@@ -404,10 +404,10 @@
 <div class="page" id="methodes">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">{{ methodes.kicker_fr }}</span><span class="lang-en">{{ methodes.kicker_en }}</span></div>
-      <h2><span class="lang-fr">{{ methodes.h2_fr }}</span><span class="lang-en">{{ methodes.h2_en }}</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ methodes.kicker_fr | nl2br | safe }}</span><span class="lang-en">{{ methodes.kicker_en | nl2br | safe }}</span></div>
+      <h2><span class="lang-fr">{{ methodes.h2_fr | nl2br | safe }}</span><span class="lang-en">{{ methodes.h2_en | nl2br | safe }}</span></h2>    </div>
     <div class="grid g2">
-      {% for c in methodes.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr }}</span><span class="lang-en">{{ c.titre_en }}</span></h4><p><span class="lang-fr">{{ c.texte_fr }}</span><span class="lang-en">{{ c.texte_en }}</span></p></div>{% endfor %}
+      {% for c in methodes.cartes %}<div class="card"><h4><span class="lang-fr">{{ c.titre_fr | nl2br | safe }}</span><span class="lang-en">{{ c.titre_en | nl2br | safe }}</span></h4><p><span class="lang-fr">{{ c.texte_fr | nl2br | safe }}</span><span class="lang-en">{{ c.texte_en | nl2br | safe }}</span></p></div>{% endfor %}
     </div>
   </section>
 </div>
@@ -416,11 +416,11 @@
 <div class="page" id="apropos">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">{{ apropos.kicker_fr }}</span><span class="lang-en">{{ apropos.kicker_en }}</span></div>
-      <h2><span class="lang-fr">{{ apropos.h2_fr }}</span><span class="lang-en">{{ apropos.h2_en }}</span></h2>    </div>
+      <div class="kicker"><span class="lang-fr">{{ apropos.kicker_fr | nl2br | safe }}</span><span class="lang-en">{{ apropos.kicker_en | nl2br | safe }}</span></div>
+      <h2><span class="lang-fr">{{ apropos.h2_fr | nl2br | safe }}</span><span class="lang-en">{{ apropos.h2_en | nl2br | safe }}</span></h2>    </div>
     <div class="wrap persons">
-      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.pearl_role_fr }}</span><span class="lang-en">{{ apropos.pearl_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr }}</span><span class="lang-en">{{ accueil.bios.pearl_en }}</span></p></div>
-      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.isabelle_role_fr }}</span><span class="lang-en">{{ apropos.isabelle_role_en }}</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr }}</span><span class="lang-en">{{ accueil.bios.isabelle_en }}</span></p></div>
+      <div class="person">{% if accueil.bios.pearl_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.pearl_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">P</div>{% endif %}<h3>Pearl</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.pearl_role_fr | nl2br | safe }}</span><span class="lang-en">{{ apropos.pearl_role_en | nl2br | safe }}</span></p><p><span class="lang-fr">{{ accueil.bios.pearl_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.bios.pearl_en | nl2br | safe }}</span></p></div>
+      <div class="person">{% if accueil.bios.isabelle_photo %}<div class="avatar" style="background-image:url('{{ accueil.bios.isabelle_photo }}');background-size:cover;background-position:center"></div>{% else %}<div class="avatar">I</div>{% endif %}<h3>Isabelle Beck</h3><p style="color:var(--sand);font-weight:600;font-size:.9rem;margin-bottom:10px"><span class="lang-fr">{{ apropos.isabelle_role_fr | nl2br | safe }}</span><span class="lang-en">{{ apropos.isabelle_role_en | nl2br | safe }}</span></p><p><span class="lang-fr">{{ accueil.bios.isabelle_fr | nl2br | safe }}</span><span class="lang-en">{{ accueil.bios.isabelle_en | nl2br | safe }}</span></p></div>
     </div>
   </section>
 </div>
@@ -429,27 +429,27 @@
 <div class="page" id="infos">
   <section class="block">
     <div class="center">
-      <div class="kicker"><span class="lang-fr">{{ infos.kicker_fr }}</span><span class="lang-en">{{ infos.kicker_en }}</span></div>
-      <h2><span class="lang-fr">{{ infos.h2_fr }}</span><span class="lang-en">{{ infos.h2_en }}</span></h2>
+      <div class="kicker"><span class="lang-fr">{{ infos.kicker_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.kicker_en | nl2br | safe }}</span></div>
+      <h2><span class="lang-fr">{{ infos.h2_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.h2_en | nl2br | safe }}</span></h2>
     </div>
     <div class="wrap" style="max-width:760px">
-      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.tarif_titre_fr }}</span><span class="lang-en">{{ infos.tarif_titre_en }}</span></h4>
-      <p><span class="lang-fr">{{ infos.tarif_intro_fr }}</span><span class="lang-en">{{ infos.tarif_intro_en }}</span></p>
+      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.tarif_titre_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.tarif_titre_en | nl2br | safe }}</span></h4>
+      <p><span class="lang-fr">{{ infos.tarif_intro_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.tarif_intro_en | nl2br | safe }}</span></p>
       <table class="tarifs" style="margin-bottom:36px">
         <tr><th><span class="lang-fr">Formule</span><span class="lang-en">Option</span></th><th><span class="lang-fr">Durée</span><span class="lang-en">Duration</span></th><th><span class="lang-fr">Tarif</span><span class="lang-en">Fee</span></th></tr>
-        <tr><td><span class="lang-fr">{{ infos.ligne_formule_fr }}</span><span class="lang-en">{{ infos.ligne_formule_en }}</span></td><td><span class="lang-fr">{{ infos.ligne_duree_fr }}</span><span class="lang-en">{{ infos.ligne_duree_en }}</span></td><td>{{ infos.ligne_prix }}</td></tr>
+        <tr><td><span class="lang-fr">{{ infos.ligne_formule_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.ligne_formule_en | nl2br | safe }}</span></td><td><span class="lang-fr">{{ infos.ligne_duree_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.ligne_duree_en | nl2br | safe }}</span></td><td>{{ infos.ligne_prix | nl2br | safe }}</td></tr>
       </table>
 
-      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.booking_titre_fr }}</span><span class="lang-en">{{ infos.booking_titre_en }}</span></h4>
-      <p style="text-align:center;color:#41525b;font-size:.92rem;margin-bottom:16px"><span class="lang-fr">💬 {{ infos.booking_hint_fr }}</span><span class="lang-en">💬 {{ infos.booking_hint_en }}</span></p>
+      <h4 style="margin-bottom:14px"><span class="lang-fr">{{ infos.booking_titre_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.booking_titre_en | nl2br | safe }}</span></h4>
+      <p style="text-align:center;color:#41525b;font-size:.92rem;margin-bottom:16px"><span class="lang-fr">💬 {{ infos.booking_hint_fr | nl2br | safe }}</span><span class="lang-en">💬 {{ infos.booking_hint_en | nl2br | safe }}</span></p>
       <div class="bookwrap">
         <iframe src="https://app.minup.io/embed/horizons-coaching/service/78707?teamMemberId=2cfffdaa-8db9-4cd3-80ac-0b7145b0070a&amp;canStartPayment=true" title="Réservation en ligne — Horizons-Coaching" style="width:100%;height:500px;max-width:100%;border:1px solid var(--line);border-radius:14px;background:#fff" loading="lazy"></iframe>
-        <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px"><span class="lang-fr">{{ infos.minup_note_fr }}</span><span class="lang-en">{{ infos.minup_note_en }}</span></p>
+        <p style="text-align:center;font-size:.82rem;color:var(--muted);margin-top:10px"><span class="lang-fr">{{ infos.minup_note_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.minup_note_en | nl2br | safe }}</span></p>
       </div>
       <script>window.addEventListener("message",function(e){if(e.origin!=="https://app.minup.io")return;var d=e.data;if(d&&d.type==="redirect_to_payment"){window.location.href=d.url;}});</script>
       <div class="grid g2" style="margin-top:22px">
-        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.contact_titre_fr }}</span><span class="lang-en">{{ infos.contact_titre_en }}</span></h3><p><span class="lang-fr">{{ infos.contact_intro_fr }}</span><span class="lang-en">{{ infos.contact_intro_en }}</span><br><br>✉️ {{ infos.contact_email }}<br>📱 {{ infos.contact_tel }}</p></div>
-        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.ou_titre_fr }}</span><span class="lang-en">{{ infos.ou_titre_en }}</span></h3><p><span class="lang-fr">{{ infos.ou_texte_fr }}</span><span class="lang-en">{{ infos.ou_texte_en }}</span></p></div>
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.contact_titre_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.contact_titre_en | nl2br | safe }}</span></h3><p><span class="lang-fr">{{ infos.contact_intro_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.contact_intro_en | nl2br | safe }}</span><br><br>✉️ {{ infos.contact_email | nl2br | safe }}<br>📱 {{ infos.contact_tel | nl2br | safe }}</p></div>
+        <div class="card"><h3 style="font-size:1.15rem"><span class="lang-fr">{{ infos.ou_titre_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.ou_titre_en | nl2br | safe }}</span></h3><p><span class="lang-fr">{{ infos.ou_texte_fr | nl2br | safe }}</span><span class="lang-en">{{ infos.ou_texte_en | nl2br | safe }}</span></p></div>
       </div>
     </div>
   </section>
